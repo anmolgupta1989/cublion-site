@@ -24,69 +24,71 @@
     color: var(--white);
   }
 
-  /* NAV */
+  /* ---------- NAV (logo left + centered links) ---------- */
+
   nav{
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
     background: rgba(31,47,74,0.95);
     backdrop-filter: blur(10px);
-    padding: 22px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: padding .18s ease, background .18s ease, box-shadow .18s ease;
+    z-index: 1000;
+    transition: padding .18s ease, box-shadow .18s ease, background .18s ease;
+    padding: 20px 28px;
   }
 
-  /* Shrink on scroll */
   nav.shrink{
-    padding: 12px 28px;
+    padding: 12px 22px;
     background: rgba(31,47,74,0.97);
     box-shadow: 0 10px 30px rgba(0,0,0,0.18);
   }
 
-  .nav-left{
-    display:flex;
-    align-items:center;
-    gap:14px;
+  .nav-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 72px 1fr 72px; /* left logo / centered links / right spacer */
+    align-items: center;
   }
 
-  /* Use a lion-only asset if you have one.
-     If not, this still works with logo.png (it will just show the full logo). */
-  .nav-logo{
-    height: 44px;
+  /* Lion insignia (top-left) */
+  .nav-insignia{
+    height: 54px;
     width: auto;
     display:block;
-    transition: height .18s ease, opacity .18s ease;
+    transition: height .18s ease, transform .18s ease, filter .18s ease;
   }
 
-  nav.shrink .nav-logo{
-    height: 36px;
+  nav.shrink .nav-insignia{ height: 42px; }
+
+  .nav-insignia:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(198,165,106,.35));
   }
 
   .nav-links{
+    justify-self: center;
     display: flex;
-    gap: 34px;
-    align-items:center;
+    gap: 36px;
+    align-items: center;
   }
 
+  /* 50% bigger than the original 18px */
   .nav-links a{
     position: relative;
     color: var(--gold);
     text-decoration: none;
     font-weight: 600;
-    font-size: 26px; /* ~50% larger than your old 18px */
-    letter-spacing: 0.4px;
+    font-size: 27px;   /* ~50% bigger than 18px */
+    letter-spacing: 0.35px;
     padding: 8px 2px;
     transition: opacity .15s ease;
   }
+  .nav-links a:hover{ opacity:.82; }
 
-  .nav-links a:hover{ opacity: .82; }
-
-  /* Underline hover animation */
+  /* underline animation */
   .nav-links a::after{
     content:"";
     position:absolute;
@@ -100,11 +102,11 @@
     transition: transform .18s ease;
     opacity: .9;
   }
-
   .nav-links a:hover::after{ transform: scaleX(1); }
 
-  /* Hamburger */
+  /* Hamburger (mobile) */
   .hamburger{
+    justify-self: end;
     display:none;
     background: transparent;
     border: 0;
@@ -112,22 +114,28 @@
     padding: 10px;
     border-radius: 12px;
   }
-
   .hamburger:focus{
     outline: 2px solid rgba(198,165,106,0.65);
     outline-offset: 2px;
   }
-
   .hamburger .bar{
     display:block;
     width: 28px;
     height: 2px;
     background: var(--gold);
     margin: 6px 0;
-    transition: transform .18s ease, opacity .18s ease;
   }
 
   /* Mobile menu panel */
+  .overlay{
+    display:none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1100;
+  }
+  .overlay.show{ display:block; }
+
   .mobile-panel{
     display:none;
     position: fixed;
@@ -143,10 +151,8 @@
     transition: transform .22s ease;
     padding: 22px;
   }
-
-  .mobile-panel.open{
-    transform: translateX(0);
-  }
+  .mobile-panel.show{ display:block; }
+  .mobile-panel.open{ transform: translateX(0); }
 
   .mobile-top{
     display:flex;
@@ -154,7 +160,6 @@
     justify-content: space-between;
     gap: 12px;
   }
-
   .mobile-close{
     background: transparent;
     border: 0;
@@ -164,19 +169,16 @@
     padding: 8px 10px;
     border-radius: 12px;
   }
-
   .mobile-close:focus{
     outline: 2px solid rgba(198,165,106,0.65);
     outline-offset: 2px;
   }
-
   .mobile-links{
     margin-top: 26px;
     display:flex;
     flex-direction: column;
     gap: 10px;
   }
-
   .mobile-links a{
     color: var(--gold);
     text-decoration:none;
@@ -187,33 +189,21 @@
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.10);
   }
-
   .mobile-links a:hover{
     background: rgba(255,255,255,0.10);
   }
 
-  /* Overlay behind mobile menu */
-  .overlay{
-    display:none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 1100;
-  }
+  /* ---------- HERO ---------- */
 
-  .overlay.show{ display:block; }
-  .mobile-panel.show{ display:block; }
-
-  /* HERO */
   header{
     text-align:center;
-    padding: 220px 20px 120px; /* extra room for fixed nav */
+    padding: 220px 20px 120px; /* room for fixed nav */
     max-width: 1200px;
     margin: 0 auto;
   }
 
   header img.hero-logo{
-    width: 900px;
+    width: 900px;          /* brand dominant */
     max-width: 95vw;
     height: auto;
     margin-bottom: 60px;
@@ -253,16 +243,16 @@
     color: #111;
     font-size: 16px;
   }
-
   button.cta:hover{ opacity: .9; }
 
-  /* SECTIONS */
+  /* ---------- SECTIONS ---------- */
+
   section{
     padding: 100px 20px;
     text-align: center;
     background: var(--white);
     color: var(--navy);
-    scroll-margin-top: 120px; /* so anchors don't hide under nav */
+    scroll-margin-top: 120px;
   }
 
   section.dark{
@@ -292,7 +282,8 @@
     font-size: 13px;
   }
 
-  /* LAYOUT + CARDS */
+  /* ---------- LAYOUT + CARDS ---------- */
+
   .container{
     max-width: 1100px;
     margin: 0 auto;
@@ -345,7 +336,8 @@
     opacity: 0.92;
   }
 
-  /* FORM */
+  /* ---------- FORM ---------- */
+
   input, textarea{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -386,48 +378,31 @@
     line-height: 1.5;
   }
 
-  /* Responsive */
+  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 980px){
-    nav{
-      padding: 18px 18px;
-    }
-    nav.shrink{
-      padding: 12px 14px;
-    }
-    .nav-links{
-      display:none; /* hide desktop links */
-    }
-    .hamburger{
-      display:block;
-    }
-    .nav-logo{
-      height: 40px;
-    }
+    .nav-links{ display:none; }
+    .hamburger{ display:block; }
+    .nav-inner{ grid-template-columns: 72px 1fr 56px; }
+    .nav-insignia{ height: 44px; }
+    nav.shrink .nav-insignia{ height: 38px; }
   }
 
   @media (max-width: 520px){
-    header{
-      padding: 190px 16px 105px;
-    }
-    h1{
-      font-size: 26px;
-    }
-    header img.hero-logo{
-      margin-bottom: 42px;
-    }
+    header{ padding: 190px 16px 105px; }
+    h1{ font-size: 26px; }
+    header img.hero-logo{ margin-bottom: 42px; }
   }
 </style>
 </head>
 
 <body>
 
-<!-- Overlay + Mobile menu -->
 <div class="overlay" id="overlay"></div>
 
 <aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
   <div class="mobile-top">
     <a href="#top" aria-label="Home">
-      <img src="logo.png" alt="CubLion" style="height:44px;width:auto;display:block;">
+      <img src="lion.png" alt="CubLion Home" style="height:44px;width:auto;display:block;">
     </a>
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
   </div>
@@ -441,26 +416,24 @@
 </aside>
 
 <nav id="topNav" aria-label="Primary navigation">
-  <div class="nav-left">
+  <div class="nav-inner">
     <a href="#top" aria-label="Home">
-      <!-- If you have a lion-only file, change src to "lion.png" (recommended).
-           Using logo.png works, but shows the full logo here too. -->
-      <img src="logo.png" class="nav-logo" alt="CubLion Home" />
+      <img src="lion.png" class="nav-insignia" alt="CubLion Home" />
     </a>
-  </div>
 
-  <div class="nav-links" aria-label="Desktop navigation">
-    <a href="#about">What We Do</a>
-    <a href="#story">Our Story</a>
-    <a href="#model">How it Works</a>
-    <a href="#contact">Contact Us</a>
-  </div>
+    <div class="nav-links" aria-label="Desktop navigation">
+      <a href="#about">What We Do</a>
+      <a href="#story">Our Story</a>
+      <a href="#model">How it Works</a>
+      <a href="#contact">Contact Us</a>
+    </div>
 
-  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
 </nav>
 
 <div id="top"></div>
@@ -608,7 +581,6 @@
   function openMenu(){
     overlay.classList.add('show');
     mobilePanel.classList.add('show');
-    // allow display to apply before transform transition
     requestAnimationFrame(() => mobilePanel.classList.add('open'));
     hamburger.setAttribute('aria-expanded', 'true');
     mobilePanel.setAttribute('aria-hidden', 'false');
@@ -621,7 +593,6 @@
     mobilePanel.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 
-    // wait for slide-out animation before hiding + overlay
     setTimeout(() => {
       mobilePanel.classList.remove('show');
       overlay.classList.remove('show');
@@ -636,12 +607,10 @@
   overlay.addEventListener('click', closeMenu);
   mobileClose.addEventListener('click', closeMenu);
 
-  // Close menu when clicking a mobile link
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close menu on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true'){
       closeMenu();
