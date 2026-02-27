@@ -1,130 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CubLion Entertainment</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style> html { scroll-behavior: smooth; }
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: #1F2F4A;
-    color: white;
-}
-header {
-    <header>
-  <img src="logo.png" alt="CubLion Entertainment" style="width:140px;height:auto;margin-bottom:28px;" />
-  <h1><span class="gold">Premium Access</span> to the World’s Best Events</h1>
-  <p style="max-width:720px;margin:0 auto; font-size:18px; line-height:1.6; opacity:0.9;">
-    Strategically managed access to NBA, NFL, MLB, NHL, concerts, and global live experiences —
-    built for corporate clients and high-net-worth individuals.
-  </p>
-  <div style="margin-top:28px;">
-    <button onclick="location.href='#contact'">Request Access</button>
-  </div>
-</header>
-}
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-.gold {
-    color: #C6A56A;
-}
-section section {
-  padding: 90px 20px;
-  text-align: center;
-  background: white;
-  color: #1F2F4A;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CubLion Entertainment</title>
 
-section p {
-  max-width: 860px;
-  margin: 14px auto 0;
-  font-size: 18px;
-  line-height: 1.7;
-  opacity: 0.92;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin: 0;
-}
-.dark {
-    background-color: #1F2F4A;
-    color: white;
-}
-button {
-    padding: 15px 30px;
-    background-color: #C6A56A;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-}
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: #1F2F4A;
-    padding: 15px;
-    text-align: center;
-}
-nav a {
-    color: #C6A56A;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-}
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #111;
-}
-</style>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    :root{
+      --navy:#1F2F4A;
+      --gold:#C6A56A;
+      --black:#0B0F16;
+      --white:#FFFFFF;
+    }
+
+    body{
+      margin:0;
+      font-family:'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    nav{
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(31,47,74,0.92);
+      backdrop-filter: blur(8px);
+      padding: 14px 16px;
+      text-align: center;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a{
+      color: var(--gold);
+      margin: 0 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+
+    header{
+      text-align:center;
+      padding: 120px 20px 90px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header img{
+      width: 140px;
+      height: auto;
+      margin-bottom: 26px;
+    }
+
+    h1{
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      line-height: 1.05;
+      margin: 0 0 18px 0;
+    }
+
+    .gold{ color: var(--gold); }
+
+    .subhead{
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.65;
+      opacity: 0.92;
+    }
+
+    .cta-row{
+      margin-top: 28px;
+    }
+
+    button{
+      padding: 14px 26px;
+      background: var(--gold);
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #111;
+    }
+
+    section{
+      padding: 92px 20px;
+      text-align: center;
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    section.dark{
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    section h2{
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin: 0;
+    }
+
+    section p{
+      max-width: 900px;
+      margin: 14px auto 0;
+      font-size: 18px;
+      line-height: 1.75;
+      opacity: 0.92;
+    }
+
+    footer{
+      text-align:center;
+      padding: 44px 18px;
+      background: var(--black);
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-<a href="#about">About</a>
-<a href="#story">Our Story</a>
-<a href="#model">Business Model</a>
-<a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#story">Our Story</a>
+    <a href="#model">Business Model</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<header>
-<h1><span class="gold">Premium Access</span> to the World's Best Events</h1>
-<p>Strategically managed access to NBA, NFL, MLB, NHL, concerts, and global live experiences.</p>
-<br>
-<button onclick="location.href='#contact'">Request Access</button>
-</header>
+  <header>
+    <img src="logo.png" alt="CubLion Entertainment" />
+    <h1><span class="gold">Premium Access</span> to the World’s Best Events</h1>
+    <p class="subhead">
+      Strategically managed access to NBA, NFL, MLB, NHL, concerts, and global live experiences —
+      built for corporate clients and high-net-worth individuals.
+    </p>
+    <div class="cta-row">
+      <button onclick="location.href='#contact'">Request Access</button>
+    </div>
+  </header>
 
-<section id="about">
-<h2>About CubLion</h2>
-<p>CubLion Entertainment secures premium event access for high-net-worth individuals and corporate clients through direct team relationships and strategic negotiation.</p>
-</section>
+  <section id="about">
+    <h2>About CubLion</h2>
+    <p>
+      CubLion Entertainment secures premium event access for corporate clients and high-net-worth individuals
+      through direct relationships and strategic negotiation — with a focus on discretion, reliability, and leverage.
+    </p>
+  </section>
 
-<section id="story" class="dark">
-<h2>Our Story</h2>
-<p>Founded to eliminate resale friction and unpredictable markups, CubLion was built to deliver structured, professional access to live sports and entertainment.</p>
-</section>
+  <section id="story" class="dark">
+    <h2>Our Story</h2>
+    <p>
+      CubLion was built to eliminate resale friction and unpredictable markups. We deliver structured, professional,
+      managed access to the events that matter — without the chaos of the open market.
+    </p>
+  </section>
 
-<section id="model">
-<h2>Business Model</h2>
-<p>We leverage relationships across 30 NBA teams, 31 NFL teams, and the majority of MLB and NHL franchises to provide flexible, discounted access packages.</p>
-</section>
+  <section id="model">
+    <h2>Business Model</h2>
+    <p>
+      We leverage relationships across 30 NBA teams, 31 NFL teams, and the majority of MLB and NHL franchises to
+      provide flexible access packages, proactive planning, and hands-on management.
+    </p>
+  </section>
 
-<section id="contact" class="dark">
-<h2>Contact Us</h2>
-<p>Email: info@cublion.com</p>
-<p>Consultations by appointment.</p>
-</section>
+  <section id="contact" class="dark">
+    <h2>Contact Us</h2>
+    <p>
+      Email: <span class="gold">info@cublion.com</span><br/>
+      Consultations by appointment.
+    </p>
+  </section>
 
-<footer>
-© 2026 CubLion Entertainment. All Rights Reserved.
-</footer>
+  <footer>
+    © 2026 CubLion Entertainment. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
