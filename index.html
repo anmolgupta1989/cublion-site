@@ -7,90 +7,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  .container{
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.grid{
-  display: grid;
-  gap: 18px;
-  margin-top: 28px;
-}
-
-@media (min-width: 900px){
-  .grid-3{ grid-template-columns: repeat(3, 1fr); }
-  .grid-2{ grid-template-columns: repeat(2, 1fr); }
-}
-
-.card{
-  border-radius: 18px;
-  padding: 22px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.06);
-  text-align: left;
-}
-
-section:not(.dark) .card{
-  background: #fff;
-  border: 1px solid rgba(31,47,74,0.12);
-}
-
-.kicker{
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.85;
-  margin-bottom: 10px;
-}
-
-.card h3{
-  margin: 0 0 8px 0;
-  font-size: 18px;
-}
-
-.card p{
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-input, textarea{
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-}
-
-.form-wrap{
-  max-width: 640px;
-  margin: 34px auto 0;
-  text-align: left;
-}
-
-label{
-  display:block;
-  margin: 0 0 6px 0;
-  font-weight: 600;
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-.field{
-  width:100%;
-  padding: 12px 12px;
-  margin-bottom: 16px;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-}
-
-.small-note{
-  font-size: 12px;
-  opacity: 0.75;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
   <style>
     html { scroll-behavior: smooth; }
 
@@ -137,11 +53,11 @@ label{
       margin: 0 auto;
     }
 
-  header img{
-  width: 260px;
-  height: auto;
-  margin-bottom: 36px;
-}
+    header img{
+      width: 260px;
+      height: auto;
+      margin-bottom: 36px;
+    }
 
     h1{
       font-family: 'Playfair Display', serif;
@@ -207,17 +123,104 @@ label{
       color: rgba(255,255,255,0.75);
       font-size: 13px;
     }
+
+    /* ---- Added layout + cards + form styles ---- */
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .grid{
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    @media (min-width: 900px){
+      .grid-3{ grid-template-columns: repeat(3, 1fr); }
+      .grid-2{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card{
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.06);
+      text-align: left;
+    }
+
+    section:not(.dark) .card{
+      background: #fff;
+      border: 1px solid rgba(31,47,74,0.12);
+    }
+
+    .kicker{
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
+
+    .card h3{
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+
+    .card p{
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.65;
+      opacity: 0.92;
+    }
+
+    input, textarea{
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+    }
+
+    .form-wrap{
+      max-width: 640px;
+      margin: 34px auto 0;
+      text-align: left;
+    }
+
+    label{
+      display:block;
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .field{
+      width:100%;
+      padding: 12px 12px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .small-note{
+      font-size: 12px;
+      opacity: 0.75;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="#about">Overview</a>
-  <a href="#story">Story</a>
-  <a href="#model">How it Works</a>
-  <a href="#contact">Request Access</a>
-</nav>
+  <nav>
+    <a href="#about">Overview</a>
+    <a href="#story">Story</a>
+    <a href="#model">How it Works</a>
+    <a href="#contact">Request Access</a>
+  </nav>
 
   <header>
     <img src="logo.png" alt="CubLion Entertainment" />
@@ -232,104 +235,124 @@ label{
   </header>
 
   <section id="about">
-    <h2>About CubLion</h2>
-    <p>
-      CubLion Entertainment secures premium event access for corporate clients and high-net-worth individuals
-      through direct relationships and strategic negotiation — with a focus on discretion, reliability, and leverage.
-    </p>
+    <div class="container">
+      <div class="kicker">What we do</div>
+      <h2>Premium Access. Professionally Managed.</h2>
+      <p>
+        CubLion Entertainment helps businesses and high-net-worth clients secure premium access to
+        sporting events, concerts, and live experiences—without the friction of the open market.
+        We handle planning, sourcing, and execution end-to-end.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Strategic Sourcing</h3>
+          <p>We pursue the best available options across direct channels and trusted partners—optimized for value and reliability.</p>
+        </div>
+        <div class="card">
+          <h3>White-Glove Management</h3>
+          <p>We manage requests, options, delivery, and changes so you don’t have to.</p>
+        </div>
+        <div class="card">
+          <h3>Hybrid Structure</h3>
+          <p>Choose a retained relationship, per-event execution, or a blend—based on your usage.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="story" class="dark">
-    <h2>Our Story</h2>
-    <p>
-      CubLion was built to eliminate resale friction and unpredictable markups. We deliver structured, professional,
-      managed access to the events that matter — without the chaos of the open market.
-    </p>
+    <div class="container">
+      <div class="kicker">Our story</div>
+      <h2>Built for Clients Who Value Time, Discretion, and Leverage.</h2>
+      <p>
+        CubLion was created to remove uncertainty and markup chaos from premium event access.
+        We operate like an access desk—structured, responsive, and relationship-driven.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Discreet by design</h3>
+          <p>We keep communication direct, logistics clean, and client needs confidential.</p>
+        </div>
+        <div class="card">
+          <h3>Fast, decisive execution</h3>
+          <p>Clear options, quick turnaround, and proactive planning for key dates and events.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
- .container{
-  max-width: 1100px;
-  margin: 0 auto;
-}
+  <section id="model">
+    <div class="container">
+      <div class="kicker">How it works</div>
+      <h2>Simple Process. Serious Results.</h2>
+      <p>
+        Tell us what you want. We respond with curated options. Once confirmed, we handle procurement and delivery.
+        Ongoing clients get priority planning and proactive recommendations.
+      </p>
 
-.grid{
-  display: grid;
-  gap: 18px;
-  margin-top: 28px;
-}
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>1) Request</h3>
+          <p>Share event, city, date range, seating preferences, and budget.</p>
+        </div>
+        <div class="card">
+          <h3>2) Curate</h3>
+          <p>We source options and send a clean shortlist—no noise, no endless scrolling.</p>
+        </div>
+        <div class="card">
+          <h3>3) Confirm</h3>
+          <p>We execute and manage delivery logistics, with support for changes when possible.</p>
+        </div>
+      </div>
 
-@media (min-width: 900px){
-  .grid-3{ grid-template-columns: repeat(3, 1fr); }
-  .grid-2{ grid-template-columns: repeat(2, 1fr); }
-}
+      <div style="margin-top:34px;">
+        <div class="kicker">Who we serve</div>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Corporate & Executive Teams</h3>
+            <p>Client entertaining, recruiting, rewards, and relationship-building—handled professionally.</p>
+          </div>
+          <div class="card">
+            <h3>High-Net-Worth Individuals</h3>
+            <p>Premium seating for key games and moments, without the hassle.</p>
+          </div>
+          <div class="card">
+            <h3>Family Offices & Private Groups</h3>
+            <p>Ongoing access planning across seasons, cities, and events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.card{
-  border-radius: 18px;
-  padding: 22px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.06);
-  text-align: left;
-}
+  <section id="contact" class="dark">
+    <div class="container">
+      <div class="kicker">Contact</div>
+      <h2>Request Access</h2>
+      <p>Tell us what you’re looking for and we’ll respond with next steps.</p>
 
-section:not(.dark) .card{
-  background: #fff;
-  border: 1px solid rgba(31,47,74,0.12);
-}
+      <form class="form-wrap" action="PASTE_YOUR_FORMSPREE_URL_HERE" method="POST">
+        <label for="name">Full name</label>
+        <input class="field" id="name" name="name" type="text" required />
 
-.kicker{
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.85;
-  margin-bottom: 10px;
-}
+        <label for="email">Email</label>
+        <input class="field" id="email" name="email" type="email" required />
 
-.card h3{
-  margin: 0 0 8px 0;
-  font-size: 18px;
-}
+        <label for="company">Company (optional)</label>
+        <input class="field" id="company" name="company" type="text" />
 
-.card p{
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.65;
-}
+        <label for="message">What access are you looking for?</label>
+        <textarea class="field" id="message" name="message" rows="5" required></textarea>
 
-input, textarea{
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-}
-
-.form-wrap{
-  max-width: 640px;
-  margin: 34px auto 0;
-  text-align: left;
-}
-
-label{
-  display:block;
-  margin: 0 0 6px 0;
-  font-weight: 600;
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-.field{
-  width:100%;
-  padding: 12px 12px;
-  margin-bottom: 16px;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-}
-
-.small-note{
-  font-size: 12px;
-  opacity: 0.75;
-  margin-top: 10px;
-  line-height: 1.5;
-}
+        <button type="submit" style="width:100%;">Submit Inquiry</button>
+        <div class="small-note">
+          By submitting, you agree to be contacted regarding your request. We don’t sell your information.
+        </div>
+      </form>
+    </div>
+  </section>
 
   <footer>
     © 2026 CubLion Entertainment. All Rights Reserved.
