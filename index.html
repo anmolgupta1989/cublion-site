@@ -25,40 +25,42 @@ body{
 /* NAV */
 
 nav{
+  position:fixed;
   width:100%;
-  background: rgba(31,47,74,0.95);
-  padding:20px 0;
+  top:0;
+  background:rgba(31,47,74,0.95);
+  padding:22px 0;
   text-align:center;
   border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:100;
 }
 
 nav a{
-  color: var(--gold);
-  margin:0 24px;
+  color:var(--gold);
+  margin:0 28px;
   text-decoration:none;
   font-weight:600;
-  font-size:18px;   /* LARGER */
-  letter-spacing:.5px;
+  font-size:20px;   /* LARGER NAV */
 }
 
 /* HERO */
 
 header{
   text-align:center;
-  padding:120px 20px 100px;
+  padding:200px 20px 120px;
   max-width:1100px;
   margin:0 auto;
 }
 
 header img{
-  width:420px;   /* MUCH BIGGER LOGO */
+  width:520px;   /* 2–3X BIGGER LOGO */
   height:auto;
   margin-bottom:40px;
 }
 
 .brand-name{
   font-family:'Playfair Display', serif;
-  font-size:42px;   /* MUCH BIGGER NAME */
+  font-size:48px;
   margin:0;
 }
 
@@ -66,14 +68,14 @@ header img{
   font-size:18px;
   letter-spacing:3px;
   opacity:.8;
-  margin-top:10px;
+  margin-top:12px;
 }
 
 h1{
   font-family:'Playfair Display', serif;
-  font-size:40px;  /* REDUCED SIZE */
-  line-height:1.2;
-  margin:60px 0 20px;
+  font-size:38px;   /* REDUCED */
+  line-height:1.25;
+  margin:70px 0 20px;
 }
 
 .gold{ color:var(--gold); }
@@ -87,14 +89,14 @@ h1{
 }
 
 button{
-  margin-top:30px;
-  padding:16px 36px;
+  margin-top:35px;
+  padding:18px 42px;
   background:var(--gold);
   border:none;
   border-radius:999px;
   font-weight:700;
+  font-size:17px;
   cursor:pointer;
-  font-size:16px;
 }
 </style>
 </head>
@@ -102,17 +104,14 @@ button{
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="overview.html">Overview</a>
-  <a href="story.html">Story</a>
-  <a href="how-it-works.html">How it Works</a>
-  <a href="contact.html">Request Access</a>
+  <a href="#about">Overview</a>
+  <a href="#story">Story</a>
+  <a href="#model">How it Works</a>
+  <a href="#contact">Request Access</a>
 </nav>
 
 <header>
   <img src="logo.png" alt="CubLion Logo" />
-  <h2 class="brand-name">CubLion Entertainment</h2>
-  <div class="tagline">Premium Access. Simplified.</div>
 
   <h1>
     <span class="gold">Rebuilding Access</span><br/>
@@ -120,10 +119,11 @@ button{
   </h1>
 
   <p class="subhead">
-    CubLion is a modern sports access platform helping businesses and high-value clients secure premium seating — without resale chaos, pricing opacity, or manual friction.
+    CubLion is a modern sports access platform helping businesses and high-value clients secure premium seating —
+    without resale chaos, pricing opacity, or manual friction.
   </p>
 
-  <button onclick="location.href='contact.html'">Request Access</button>
+  <button onclick="location.href='#contact'">Request Access</button>
 </header>
 
 </body>
