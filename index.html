@@ -59,7 +59,7 @@ header img{
   width: 520px;
   max-width: 88vw;
   height: auto;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
 h1{
@@ -69,10 +69,15 @@ h1{
   margin: 0 0 18px 0;
 }
 
-.gold{ color: var(--gold); }
+/* Premium gold gradient for headings */
+.gold{
+  background: linear-gradient(90deg, #C6A56A, #E0C48F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .subhead{
-  max-width: 820px;
+  max-width: 860px;
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.65;
@@ -100,7 +105,7 @@ section{
   text-align: center;
   background: var(--white);
   color: var(--navy);
-  scroll-margin-top: 78px;
+  scroll-margin-top: 88px;
 }
 
 section.dark{
@@ -237,13 +242,18 @@ section.dark .field{
 
 <header>
   <img src="logo.png" alt="CubLion Entertainment" />
-  <h1><span class="gold"></span><br/> Reimagining Access to Sports, Concerts, and Live Events</h1>
-  <p class="subhead">
-    CubLion Entertaiment is a cutting-edge platform designed to help small and medium businesses as well as high-value clients secure premium seating
-    for sports, concerts, and live experiences, without having to deal with the choas of resale, inventory management, or manual friction. 
 
-    If you want season tickets for your business at a steep discount to market price, perhaps for your employee of the month, a high-value client, or just for your own friends/family, look no further.
+  <h1 class="gold">Reimagining Access to Sports, Concerts, and Live Events</h1>
+
+  <p class="subhead">
+    CubLion Entertainment is a modern access platform for small and mid-sized businesses and high-value clients.
+    We help you secure premium seating with speed and clarity—without inflated resale markups, inventory headaches,
+    or manual back-and-forth.
   </p>
+  <p class="subhead" style="margin-top:14px;">
+    From season-long access to one-off moments, we source options quickly and execute cleanly.
+  </p>
+
   <div class="cta-row">
     <button onclick="location.href='#contact'">Request Access</button>
   </div>
@@ -252,24 +262,26 @@ section.dark .field{
 <section id="about">
   <div class="container">
     <div class="kicker">What we do</div>
-    <h2>A Smarter Infrastructure for Premium Access.</h2>
+    <h2 class="gold">A Smarter Infrastructure for Premium Access.</h2>
     <p>
-      The ticket market is fragmented, confusing, volatile, and inefficient.
-      CubLion Entertainment simplifies everything for you. Just tell us what you need and we will procure it for you at a steep discount. Utilizing our strategic sourcing, relationship leverage with virtually all professional sports teams, and world-class platform, we guarantee better rates and pricing than anyone else in the industry!
+      The ticket market is fragmented, volatile, and inefficient. CubLion simplifies the process:
+      tell us what you want, and we source and execute with discipline. Through strategic sourcing and a broad
+      network across leagues, teams, and trusted partners, we often deliver meaningful pricing advantages versus
+      open-market resale—without compromising reliability.
     </p>
 
     <div class="grid grid-3">
       <div class="card">
         <h3>Strategic Sourcing</h3>
-        <p>We access inventory through verified channels and relationship-driven sourcing—optimizing for seating quality, availability, and pricing integrity.</p>
+        <p>We pursue the best available options across verified channels and relationship-driven supply—optimized for seating quality, availability, and pricing integrity.</p>
       </div>
       <div class="card">
         <h3>Managed Execution</h3>
-        <p>From request intake to confirmation and delivery logistics, we run the process end-to-end so you don’t waste time chasing options. We do all of the work of procuring tickets for you.</p>
+        <p>From request intake to confirmation and delivery logistics, we run the process end-to-end so you don’t spend time hunting, comparing, and coordinating.</p>
       </div>
       <div class="card">
-        <h3>Hybrid Pricing</h3>
-        <p>Use CubLion on a per-event basis, a subscription service for ongoing access planning, or combine both. We will work with you to meet your needs.</p>
+        <h3>Hybrid Engagement</h3>
+        <p>Use CubLion per event, retain us for ongoing planning, or combine both. We tailor the structure to your usage patterns and priorities.</p>
       </div>
     </div>
   </div>
@@ -278,10 +290,10 @@ section.dark .field{
 <section id="story" class="dark">
   <div class="container">
     <div class="kicker">Our story</div>
-    <h2>Built to Replace Chaos With a System.</h2>
+    <h2 class="gold">Built to Replace Chaos With a System.</h2>
     <p>
-      Premium access shouldn’t require hours of searching for fair prices or sorting through unpredictable markups.
-      CubLion Entertainment was built as an execution-focused layer — designed to move fast, stay clean, and deliver reliably.
+      Premium access shouldn’t require hours of searching, inconsistent pricing, or last-minute scrambling.
+      CubLion was built as an execution-focused layer—designed to move fast, stay clean, and deliver reliably.
     </p>
 
     <div class="grid grid-2">
@@ -291,7 +303,7 @@ section.dark .field{
       </div>
       <div class="card">
         <h3>Control + consistency</h3>
-        <p>Structured workflows that prioritize reliability, quality, and responsive support.</p>
+        <p>Structured workflows that prioritize reliability, seating quality, and responsive support.</p>
       </div>
     </div>
   </div>
@@ -300,25 +312,24 @@ section.dark .field{
 <section id="model">
   <div class="container">
     <div class="kicker">How it works</div>
-    <h2>Access. Re-Engineered.</h2>
+    <h2 class="gold">Access. Re-Engineered.</h2>
     <p>
-      Submit your request. We analyze supply, pricing, and seating tiers.
-      You receive curated options with clear execution paths.
-      No noise. No open-market roulette.
+      Submit your request. We evaluate supply, pricing, and seating tiers. You receive curated options with clear
+      execution paths. No noise. No open-market roulette.
     </p>
 
     <div class="grid grid-3">
       <div class="card">
         <h3>1) Request</h3>
-        <p>Share event, city, date range, seating preferences, and budget.</p>
+        <p>Share event, city, date range, seating preferences, and target budget.</p>
       </div>
       <div class="card">
         <h3>2) Curate</h3>
-        <p>We source and return a shortlist designed to be decided on quickly.</p>
+        <p>We source options and return a shortlist designed to be decided on quickly, with clear tradeoffs.</p>
       </div>
       <div class="card">
         <h3>3) Execute</h3>
-        <p>We confirm, manage delivery logistics, and support changes when possible.</p>
+        <p>We confirm, manage delivery logistics, and support changes when possible—so the experience stays seamless.</p>
       </div>
     </div>
   </div>
@@ -327,7 +338,7 @@ section.dark .field{
 <section id="contact" class="dark">
   <div class="container">
     <div class="kicker">Contact</div>
-    <h2>Request Access</h2>
+    <h2 class="gold">Request Access</h2>
     <p>Tell us what you’re looking for and we’ll respond with next steps.</p>
 
     <form class="form-wrap" action="https://formspree.io/f/mreadqad" method="POST">
@@ -346,7 +357,7 @@ section.dark .field{
       <button type="submit" style="width:100%;">Submit Inquiry</button>
 
       <div class="small-note">
-        By submitting, you agree to be contacted regarding your request.
+        By submitting, you agree to be contacted regarding your request. We don’t sell your information.
       </div>
     </form>
   </div>
