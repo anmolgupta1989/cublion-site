@@ -40,7 +40,7 @@ nav a{
   margin:0 28px;
   text-decoration:none;
   font-weight:600;
-  font-size:20px;   /* LARGER NAV */
+  font-size:20px;
 }
 
 /* HERO */
@@ -53,32 +53,22 @@ header{
 }
 
 header img{
-  width:520px;   /* 2–3X BIGGER LOGO */
+  width:520px;
+  max-width:88vw; /* responsive */
   height:auto;
-  margin-bottom:40px;
-}
-
-.brand-name{
-  font-family:'Playfair Display', serif;
-  font-size:48px;
-  margin:0;
-}
-
-.tagline{
-  font-size:18px;
-  letter-spacing:3px;
-  opacity:.8;
-  margin-top:12px;
+  margin-bottom:28px;
 }
 
 h1{
   font-family:'Playfair Display', serif;
-  font-size:38px;   /* REDUCED */
+  font-size:38px;
   line-height:1.25;
-  margin:70px 0 20px;
+  margin:48px 0 18px;
 }
 
-.gold{ color:var(--gold); }
+.gold{ 
+  color:var(--gold); 
+}
 
 .subhead{
   max-width:760px;
@@ -98,6 +88,76 @@ button{
   font-size:17px;
   cursor:pointer;
 }
+
+button:hover{
+  opacity:.9;
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 20px;
+  text-align:center;
+  background:#ffffff;
+  color:#1F2F4A;
+}
+
+section.dark{
+  background:#1F2F4A;
+  color:white;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+}
+
+section h2{
+  font-family:'Playfair Display', serif;
+  font-size:32px;
+  margin:0 0 20px;
+}
+
+section p{
+  font-size:18px;
+  line-height:1.7;
+  opacity:.92;
+  max-width:800px;
+  margin:0 auto;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:40px;
+  background:var(--black);
+  color:rgba(255,255,255,0.7);
+  font-size:14px;
+}
+
+/* Responsive */
+
+@media (max-width:768px){
+
+  nav a{
+    margin:0 14px;
+    font-size:16px;
+  }
+
+  header{
+    padding:160px 20px 100px;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  button{
+    padding:16px 32px;
+  }
+}
+
 </style>
 </head>
 
@@ -111,6 +171,7 @@ button{
 </nav>
 
 <header>
+
   <img src="logo.png" alt="CubLion Logo" />
 
   <h1>
@@ -124,7 +185,68 @@ button{
   </p>
 
   <button onclick="location.href='#contact'">Request Access</button>
+
 </header>
+
+<section id="about">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      CubLion introduces structure to the premium ticket market. We combine strategic sourcing,
+      relationship leverage, and disciplined execution into a single modern access platform.
+    </p>
+  </div>
+</section>
+
+<section id="story" class="dark">
+  <div class="container">
+    <h2>Our Story</h2>
+    <p>
+      Premium access shouldn’t require hours of searching or unpredictable markups.
+      CubLion was built to replace chaos with a system — clean, responsive, and execution-focused.
+    </p>
+  </div>
+</section>
+
+<section id="model">
+  <div class="container">
+    <h2>How It Works</h2>
+    <p>
+      Submit your request. We analyze supply, pricing, and seating tiers.
+      You receive curated options with clear execution paths.
+      No noise. No open-market roulette.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="dark">
+  <div class="container">
+    <h2>Request Access</h2>
+    <p>Tell us what you’re looking for and we’ll respond with next steps.</p>
+
+    <form action="https://formspree.io/f/mreadqad" method="POST" style="max-width:600px;margin:40px auto 0;text-align:left;">
+      
+      <label>Full Name</label>
+      <input type="text" name="name" required style="width:100%;padding:12px;margin-bottom:18px;border:none;border-radius:6px;" />
+
+      <label>Email</label>
+      <input type="email" name="email" required style="width:100%;padding:12px;margin-bottom:18px;border:none;border-radius:6px;" />
+
+      <label>Company (Optional)</label>
+      <input type="text" name="company" style="width:100%;padding:12px;margin-bottom:18px;border:none;border-radius:6px;" />
+
+      <label>What access are you looking for?</label>
+      <textarea name="message" rows="5" required style="width:100%;padding:12px;margin-bottom:22px;border:none;border-radius:6px;"></textarea>
+
+      <button type="submit" style="width:100%;">Submit Inquiry</button>
+
+    </form>
+  </div>
+</section>
+
+<footer>
+© 2026 CubLion Entertainment. All Rights Reserved.
+</footer>
 
 </body>
 </html>
