@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CubLion Entertainment</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
+<style> html { scroll-behavior: smooth; }
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -13,8 +13,17 @@ body {
     color: white;
 }
 header {
-    text-align: center;
-    padding: 100px 20px;
+    <header>
+  <img src="logo.png" alt="CubLion Entertainment" style="width:140px;height:auto;margin-bottom:28px;" />
+  <h1><span class="gold">Premium Access</span> to the World’s Best Events</h1>
+  <p style="max-width:720px;margin:0 auto; font-size:18px; line-height:1.6; opacity:0.9;">
+    Strategically managed access to NBA, NFL, MLB, NHL, concerts, and global live experiences —
+    built for corporate clients and high-net-worth individuals.
+  </p>
+  <div style="margin-top:28px;">
+    <button onclick="location.href='#contact'">Request Access</button>
+  </div>
+</header>
 }
 h1 {
     font-family: 'Playfair Display', serif;
@@ -24,11 +33,25 @@ h1 {
 .gold {
     color: #C6A56A;
 }
-section {
-    padding: 80px 20px;
-    text-align: center;
-    background: white;
-    color: #1F2F4A;
+section section {
+  padding: 90px 20px;
+  text-align: center;
+  background: white;
+  color: #1F2F4A;
+}
+
+section p {
+  max-width: 860px;
+  margin: 14px auto 0;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 0;
 }
 .dark {
     background-color: #1F2F4A;
