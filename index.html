@@ -1,315 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CubLion Entertainment</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CubLion Entertainment</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
+<style>
+:root{
+  --navy:#1F2F4A;
+  --gold:#C6A56A;
+  --black:#0B0F16;
+  --white:#FFFFFF;
+}
 
-    :root{
-      --navy:#1F2F4A;
-      --gold:#C6A56A;
-      --black:#0B0F16;
-      --white:#FFFFFF;
-    }
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+}
 
-    body{
-      margin:0;
-      font-family:'Inter', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-    }
+/* NAV */
 
-    nav{
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(31,47,74,0.92);
-      backdrop-filter: blur(8px);
-      padding: 14px 16px;
-      text-align: center;
-      z-index: 10;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+nav{
+  width:100%;
+  background: rgba(31,47,74,0.95);
+  padding:20px 0;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    nav a{
-      color: var(--gold);
-      margin: 0 14px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.2px;
-    }
+nav a{
+  color: var(--gold);
+  margin:0 24px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:18px;   /* LARGER */
+  letter-spacing:.5px;
+}
 
-    header{
-      text-align:center;
-      padding: 150px 20px 90px; /* extra room for fixed nav */
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+/* HERO */
 
-    header img{
-      width: 260px;
-      height: auto;
-      margin-bottom: 36px;
-    }
+header{
+  text-align:center;
+  padding:120px 20px 100px;
+  max-width:1100px;
+  margin:0 auto;
+}
 
-    h1{
-      font-family: 'Playfair Display', serif;
-      font-size: 52px;
-      line-height: 1.05;
-      margin: 0 0 18px 0;
-    }
+header img{
+  width:420px;   /* MUCH BIGGER LOGO */
+  height:auto;
+  margin-bottom:40px;
+}
 
-    .gold{ color: var(--gold); }
+.brand-name{
+  font-family:'Playfair Display', serif;
+  font-size:42px;   /* MUCH BIGGER NAME */
+  margin:0;
+}
 
-    .subhead{
-      max-width: 820px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.65;
-      opacity: 0.92;
-    }
+.tagline{
+  font-size:18px;
+  letter-spacing:3px;
+  opacity:.8;
+  margin-top:10px;
+}
 
-    .cta-row{
-      margin-top: 28px;
-    }
+h1{
+  font-family:'Playfair Display', serif;
+  font-size:40px;  /* REDUCED SIZE */
+  line-height:1.2;
+  margin:60px 0 20px;
+}
 
-    button{
-      padding: 14px 26px;
-      background: var(--gold);
-      border: none;
-      border-radius: 999px;
-      font-weight: 700;
-      cursor: pointer;
-      color: #111;
-    }
+.gold{ color:var(--gold); }
 
-    section{
-      padding: 92px 20px;
-      text-align: center;
-      background: var(--white);
-      color: var(--navy);
-      scroll-margin-top: 78px; /* prevents title hiding under fixed nav */
-    }
+.subhead{
+  max-width:760px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  opacity:.9;
+}
 
-    section.dark{
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    section h2{
-      font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      margin: 0;
-    }
-
-    section p{
-      max-width: 900px;
-      margin: 14px auto 0;
-      font-size: 18px;
-      line-height: 1.75;
-      opacity: 0.92;
-    }
-
-    footer{
-      text-align:center;
-      padding: 44px 18px;
-      background: var(--black);
-      color: rgba(255,255,255,0.75);
-      font-size: 13px;
-    }
-
-    /* ---- Layout + cards + form styles ---- */
-
-    .container{
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .grid{
-      display: grid;
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    @media (min-width: 900px){
-      .grid-3{ grid-template-columns: repeat(3, 1fr); }
-      .grid-2{ grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .card{
-      border-radius: 18px;
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.06);
-      text-align: left;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-    }
-
-    section:not(.dark) .card{
-      background: #fff;
-      border: 1px solid rgba(31,47,74,0.12);
-      box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-    }
-
-    .kicker{
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 700;
-      opacity: 0.85;
-      margin-bottom: 10px;
-    }
-
-    .card h3{
-      margin: 0 0 8px 0;
-      font-size: 18px;
-    }
-
-    .card p{
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.65;
-      opacity: 0.92;
-    }
-
-    input, textarea{
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-    }
-
-    .form-wrap{
-      max-width: 640px;
-      margin: 34px auto 0;
-      text-align: left;
-    }
-
-    label{
-      display:block;
-      margin: 0 0 6px 0;
-      font-weight: 600;
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .field{
-      width:100%;
-      padding: 12px 12px;
-      margin-bottom: 16px;
-      border: none;
-      border-radius: 10px;
-      outline: none;
-    }
-
-    section.dark .field{
-      background: rgba(255,255,255,0.92);
-      color: #111;
-    }
-
-    .small-note{
-      font-size: 12px;
-      opacity: 0.75;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-  </style>
+button{
+  margin-top:30px;
+  padding:16px 36px;
+  background:var(--gold);
+  border:none;
+  border-radius:999px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:16px;
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#about">Overview</a>
-    <a href="#story">Story</a>
-    <a href="#model">How it Works</a>
-    <a href="#contact">Request Access</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="overview.html">Overview</a>
+  <a href="story.html">Story</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="contact.html">Request Access</a>
+</nav>
 
-  <header>
-    <img src="logo.png" alt="CubLion Entertainment" />
-    <h1>
-      <span class="gold">Rebuilding Access</span><br/>
-      to Live Sports & Global Events
-    </h1>
-    <p class="subhead">
-      CubLion is a modern sports access platform helping businesses and high-value clients secure premium seating
-      across major leagues and events — without resale chaos, pricing opacity, or manual friction.
-    </p>
-    <div class="cta-row">
-      <button onclick="location.href='#contact'">Request Access</button>
-    </div>
-  </header>
+<header>
+  <img src="logo.png" alt="CubLion Logo" />
+  <h2 class="brand-name">CubLion Entertainment</h2>
+  <div class="tagline">Premium Access. Simplified.</div>
 
-  <section id="about">
-    <div class="container">
-      <div class="kicker">What we do</div>
-      <h2>A Smarter Infrastructure for Premium Access.</h2>
-      <p>
-        The premium ticket market is fragmented, volatile, and inefficient.
-        CubLion introduces structure — combining strategic sourcing, relationship leverage, and disciplined execution
-        into a single platform.
-      </p>
+  <h1>
+    <span class="gold">Rebuilding Access</span><br/>
+    to Sports, Concerts, and Live Events
+  </h1>
 
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Strategic Sourcing</h3>
-          <p>
-            We access inventory through a network of verified channels and relationship-driven sourcing — optimizing for
-            seating quality, availability, and pricing integrity.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Managed Execution</h3>
-          <p>
-            From request intake to confirmation and delivery logistics, we run the process end-to-end so your team
-            doesn’t waste time chasing options.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Hybrid Pricing</h3>
-          <p>
-            Use CubLion on a per-event basis, retain us for ongoing access planning, or combine both depending on volume
-            and seasonality.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <p class="subhead">
+    CubLion is a modern sports access platform helping businesses and high-value clients secure premium seating — without resale chaos, pricing opacity, or manual friction.
+  </p>
 
-  <section id="story" class="dark">
-    <div class="container">
-      <div class="kicker">Our story</div>
-      <h2>Built to Replace Chaos With a System.</h2>
-      <p>
-        Premium access shouldn’t require hours of searching, unpredictable markups, or last-minute scrambling.
-        CubLion was built as an execution-focused layer — designed to move fast, stay clean, and deliver reliably.
-      </p>
+  <button onclick="location.href='contact.html'">Request Access</button>
+</header>
 
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Speed + clarity</h3>
-          <p>Clean shortlists. Clear confirmation paths. Fast turnaround when timing matters.</p>
-        </div>
-        <div class="card">
-          <h3>Control + consistency</h3>
-          <p>Structured workflows that prioritize reliability, quality, and responsive support.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="model">
-    <div class="container">
-      <div class="kicker">How it works</div>
-      <h2>Access, Engineered.</h2>
-      <p>
-        Submit your request. We analyze supply, pricing, and seating tiers. You receive curated options with clear
-        execution paths. No noise. No open-market roulette.
-      </p>
-
-  …
+</body>
+</html>
