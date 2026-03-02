@@ -5,171 +5,349 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Our Story | CubLion Entertainment</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --navy:#1F2F4A;
-  --gold:#C6A56A;
-  --black:#0B0F16;
-  --white:#FFFFFF;
-}
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background: var(--navy);
-  color: var(--white);
-  line-height:1.75;
-}
+  :root{
+    --navy:#1F2F4A;
+    --gold:#C6A56A;
+    --black:#0B0F16;
+    --white:#FFFFFF;
+  }
 
-/* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(31,47,74,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  padding: 18px 28px;
-}
-.nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-}
-.nav-insignia{
-  height: 52px;
-  width: auto;
-  display:block;
-  transition: transform .2s ease;
-}
-.nav-insignia:hover{ transform: scale(1.05); }
+  html { scroll-behavior: smooth; }
 
-.nav-links{
-  justify-self: center;
-  display: flex;
-  gap: 36px;
-  align-items: center;
-}
-.nav-links a{
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: opacity .15s ease;
-}
-.nav-links a:hover{ opacity:.85; }
+  body{
+    margin:0;
+    font-family:'Cinzel', serif;
+    background: var(--navy);
+    color: var(--white);
+  }
 
-/* PAGE */
-.container{
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 160px 20px 100px;
-  text-align: center;
-}
-.center-lion{
-  height: 120px;
-  width: auto;
-  margin: 10px auto 22px;
-  display:block;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
-}
-.gold{
-  background: linear-gradient(90deg,#C6A56A,#E0C48F);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-h1{
-  font-family:'Playfair Display', serif;
-  font-size: 44px;
-  margin: 0 0 14px 0;
-}
-.section{
-  text-align: left;
-  margin-top: 28px;
-}
-p{
-  font-size:18px;
-  margin: 0 0 16px 0;
-  opacity: .95;
-}
-h2{
-  font-family:'Playfair Display', serif;
-  font-size: 28px;
-  margin: 34px 0 12px 0;
-}
+  /* ---------- NAV (logo left + centered links) ---------- */
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(31,47,74,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+    padding: 20px 28px;
+    transition: padding .18s ease, box-shadow .18s ease, background .18s ease;
+  }
 
-@media (max-width: 900px){
-  .nav-links{ display:none; }
-}
+  nav.shrink{
+    padding: 12px 22px;
+    background: rgba(31,47,74,0.97);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  }
+
+  .nav-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 72px 1fr 72px; /* left logo / centered links / right spacer */
+    align-items: center;
+  }
+
+  .nav-insignia{
+    height: 54px;
+    width: auto;
+    display:block;
+    transition: height .18s ease, transform .18s ease, filter .18s ease;
+  }
+  nav.shrink .nav-insignia{ height: 42px; }
+
+  .nav-insignia:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(198,165,106,.35));
+  }
+
+  .nav-links{
+    justify-self: center;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .nav-links a{
+    position: relative;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    padding: 8px 2px;
+    transition: opacity .15s ease;
+  }
+  .nav-links a:hover{ opacity:.82; }
+
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:2px;
+    height:2px;
+    width:100%;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease;
+    opacity: .9;
+  }
+  .nav-links a:hover::after{ transform: scaleX(1); }
+
+  /* ---------- PAGE HERO ---------- */
+  header{
+    text-align:center;
+    padding: 190px 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .top-lion{
+    width: 110px;
+    max-width: 40vw;
+    height: auto;
+    margin: 0 auto 18px;
+    display:block;
+    filter: drop-shadow(0 0 10px rgba(198,165,106,.18));
+  }
+
+  .gold{
+    background: linear-gradient(90deg, #C6A56A, #E0C48F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1{
+    margin: 0 0 14px 0;
+    font-size: 38px;
+    letter-spacing: 0.02em;
+  }
+
+  .subhead{
+    max-width: 920px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.95;
+    opacity: 0.92;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- CONTENT ---------- */
+  main{
+    background: var(--white);
+    color: var(--navy);
+    padding: 70px 20px 90px;
+  }
+
+  .container{
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .kicker{
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 14px;
+    color: var(--navy);
+  }
+
+  h2{
+    margin: 26px 0 12px 0;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+  }
+
+  p{
+    margin: 0 0 16px 0;
+    font-size: 15px;
+    line-height: 2.0;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+  }
+
+  ul{
+    margin: 10px 0 22px 20px;
+    padding: 0;
+  }
+  li{
+    margin: 10px 0;
+    line-height: 1.8;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .callout{
+    border: 1px solid rgba(31,47,74,0.12);
+    border-radius: 18px;
+    padding: 22px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+    margin-top: 24px;
+  }
+
+  .callout strong{
+    letter-spacing: 0.02em;
+  }
+
+  .cta-row{
+    margin-top: 26px;
+    display:flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    display:inline-block;
+    padding: 14px 22px;
+    background: var(--gold);
+    color: #111;
+    border-radius: 999px;
+    text-decoration:none;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .btn:hover{ opacity: .9; }
+
+  .btn.ghost{
+    background: transparent;
+    border: 1px solid rgba(31,47,74,0.25);
+    color: var(--navy);
+  }
+
+  footer{
+    text-align:center;
+    padding: 44px 18px;
+    background: var(--black);
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 980px){
+    .nav-links{ gap: 18px; }
+    .nav-links a{ font-size: 18px; }
+    header{ padding: 175px 16px 38px; }
+    h1{ font-size: 32px; }
+  }
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav id="topNav" aria-label="Primary navigation">
   <div class="nav-inner">
     <a href="index.html" aria-label="Home">
-      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
+      <img src="lion.png" class="nav-insignia" alt="CubLion Home" />
     </a>
 
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Desktop navigation">
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html#contact">Contact</a>
     </div>
 
     <div></div>
   </div>
 </nav>
 
-<div class="container">
-  <img src="lion.png" class="center-lion" alt="CubLion">
-
+<header>
+  <img src="lion.png" class="top-lion" alt="CubLion Insignia" />
   <h1 class="gold">Our Story</h1>
+  <p class="subhead">
+    CubLion began as a simple attempt to stay connected to the sports world—and evolved into a network designed to make
+    premium access easier, more communal, and more meaningful.
+  </p>
+</header>
 
-  <div class="section">
-    <p>
-      CubLion began long before it became a business.
-    </p>
+<main>
+  <div class="container">
+    <div class="kicker">How it started</div>
 
+    <h2>CubLion began long before it became a business.</h2>
     <p>
       Growing up, access to professional sports wasn’t always easy. My father, an immigrant physician, worked tirelessly
-      to build a life for our family. Time and resources were limited. Yet sports — the camaraderie, the tension of competition,
-      the shared emotional highs and lows — were always central to who I was.
+      to build a life for our family. Time and resources were limited. But sports—the camaraderie, the competition,
+      the shared emotional highs and lows—were always central to who I was.
     </p>
-
     <p>
-      Years later, during medical residency, time became scarce again. But the desire to stay connected to the sports world never left.
-      What started as borrowing tickets from a friend evolved into something bigger: pooling resources, structuring season access intelligently,
-      and learning how to manage premium tickets efficiently.
+      I didn’t just love watching games. I loved what they created: connection, energy, community, and a sense of belonging.
     </p>
 
-    <h2 class="gold">From Shared Access to a Marketplace</h2>
-
+    <h2>The unexpected power of the front row</h2>
     <p>
-      What began as a practical solution to attend games became a platform for connection — strengthening friendships, building professional relationships,
-      and supporting client experiences. Over time, we built systems to manage allocation, resale coordination, exchanges, and logistics efficiently.
+      Years later, during medical residency, time became scarce again—but the desire to stay connected to sports never left.
+      What began as occasionally borrowing tickets from a friend turned into something bigger: pooling resources, structuring
+      season access intelligently, and figuring out how to make premium seating sustainable.
     </p>
-
     <p>
-      Today, CubLion operates as a marketplace and execution layer — helping clients acquire premium access and also helping them sell tickets when plans change.
-      The goal is simple: deliver clarity, speed, and clean execution in a market that’s often fragmented and inefficient.
+      But something unexpected happened. The value wasn’t just in the seats. It was in what those seats created.
+      Front row access—whether courtside, club level, or on the glass—isn’t just proximity to the game. It’s proximity to people.
+      Conversations started. Friendships formed. Clients became long-term relationships. The experience became communal.
     </p>
-
-    <h2 class="gold">Why It Matters</h2>
-
     <p>
-      CubLion combines disciplined execution with a lifelong love of sports — built quietly, refined through real coordination,
-      and designed to scale thoughtfully.
+      It wasn’t about status. It was about connection. That realization shaped CubLion.
     </p>
+
+    <h2>Communalizing the front row</h2>
+    <p>
+      The financial engineering came later. We learned how to make premium access easier—without forcing full-season commitments,
+      and without requiring clients to burn valuable time navigating the resale market.
+    </p>
+
+    <div class="callout">
+      <strong>What CubLion makes easier:</strong>
+      <ul>
+        <li>Accessing premium seats without a full-season commitment</li>
+        <li>Getting in at favorable pricing through a coordinated network</li>
+        <li>Reallocating or selling tickets when plans change—without the chaos</li>
+        <li>Reducing the time, friction, and uncertainty behind premium access</li>
+      </ul>
+    </div>
+
+    <h2>What we really deliver</h2>
+    <p>
+      We are not just a ticket marketplace. We are a network—built to help professionals, businesses, and individuals spend more time
+      in better seats, celebrating the athletes you love, and making connections with like-minded people.
+    </p>
+    <p>
+      Life is about connection. About passion. About winning. We simply make it easier to be in the room—or better yet, in the front row.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn" href="index.html#contact">Request Access</a>
+      <a class="btn ghost" href="how-it-works.html">How It Works</a>
+      <a class="btn ghost" href="faq.html">View FAQs</a>
+    </div>
   </div>
-</div>
+</main>
+
+<footer>
+© 2026 CubLion Entertainment. All Rights Reserved.
+</footer>
+
+<script>
+  const nav = document.getElementById('topNav');
+  const shrinkAt = 18;
+
+  function onScroll(){
+    if (window.scrollY > shrinkAt) nav.classList.add('shrink');
+    else nav.classList.remove('shrink');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
 
 </body>
 </html>
