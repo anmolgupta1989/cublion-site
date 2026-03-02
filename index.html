@@ -224,10 +224,10 @@
   }
 
   .subhead{
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.75;
     opacity: 0.92;
   }
 
@@ -336,6 +336,102 @@
     opacity: 0.92;
   }
 
+  /* ---------- HOW IT WORKS DIAGRAM (Upgraded) ---------- */
+
+  .flow{
+    margin-top: 34px;
+    display: grid;
+    gap: 18px;
+  }
+
+  @media (min-width: 900px){
+    .flow{
+      grid-template-columns: 1fr 64px 1fr 64px 1fr;
+      align-items: center;
+    }
+  }
+
+  .flow-step{
+    border-radius: 18px;
+    padding: 26px;
+    text-align: left;
+    border: 1px solid rgba(31,47,74,0.12);
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+  }
+
+  .step-num{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(198,165,106,0.22);
+    color: #6b4f23;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .flow-step h3{
+    margin: 0 0 8px 0;
+    font-size: 18px;
+  }
+
+  .flow-step p{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    opacity: 0.92;
+  }
+
+  .arrow{
+    display:none;
+    justify-content:center;
+    opacity: 0.65;
+    font-size: 28px;
+    color: rgba(31,47,74,0.75);
+  }
+  @media (min-width: 900px){
+    .arrow{ display:flex; }
+  }
+
+  /* ---------- FAQ ---------- */
+
+  .faq{
+    margin-top: 30px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  details{
+    background: #fff;
+    border: 1px solid rgba(31,47,74,0.12);
+    border-radius: 16px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+  }
+
+  summary{
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--navy);
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker{ display:none; }
+
+  details p{
+    margin: 12px 0 0 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(31,47,74,0.92);
+  }
+
   /* ---------- FORM ---------- */
 
   input, textarea{
@@ -409,7 +505,7 @@
 
   <nav class="mobile-links" aria-label="Mobile navigation">
     <a href="#about" class="mobile-link">What We Do</a>
-    <a href="#story" class="mobile-link">Our Story</a>
+    <a href="our-story.html" class="mobile-link">Our Story</a>
     <a href="#model" class="mobile-link">How it Works</a>
     <a href="#contact" class="mobile-link">Contact Us</a>
   </nav>
@@ -423,7 +519,7 @@
 
     <div class="nav-links" aria-label="Desktop navigation">
       <a href="#about">What We Do</a>
-      <a href="#story">Our Story</a>
+      <a href="our-story.html">Our Story</a>
       <a href="#model">How it Works</a>
       <a href="#contact">Contact Us</a>
     </div>
@@ -485,8 +581,14 @@
     <div class="kicker">Our story</div>
     <h2 class="gold">Built to Replace Chaos With a System.</h2>
     <p>
-      Premium access shouldn’t require hours of searching or unpredictable markups.
-      CubLion was built as an execution-focused layer—designed to move fast, stay clean, and deliver reliably.
+      CubLion began as a practical solution: a small group pooling season tickets to create smarter access.
+      Over time, it evolved into a structured platform serving busy professionals who value premium experiences and meaningful connection.
+      What started as shared access became a disciplined system — designed to replace chaos with clarity.
+    </p>
+    <p style="margin-top:18px;">
+      <a href="our-story.html" style="color:var(--gold); font-weight:600; text-decoration:none;">
+        Read the full story →
+      </a>
     </p>
 
     <div class="grid grid-2">
@@ -507,22 +609,67 @@
     <div class="kicker">How it works</div>
     <h2 class="gold">Access. Re-Engineered.</h2>
     <p>
-      Submit your request. We evaluate supply and seating tiers.
-      You receive curated options with clear execution paths.
+      A clean request-to-delivery workflow built for speed, clarity, and execution.
     </p>
 
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>1) Request</h3>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <h3>Request</h3>
         <p>Share event, city, date range, seating preferences, and target budget.</p>
       </div>
-      <div class="card">
-        <h3>2) Curate</h3>
-        <p>We source options and return a shortlist designed to be decided on quickly, with clear tradeoffs.</p>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <h3>Curate</h3>
+        <p>We source options and return a shortlist designed to be decided quickly, with clear tradeoffs.</p>
       </div>
-      <div class="card">
-        <h3>3) Execute</h3>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <h3>Execute</h3>
         <p>We confirm, manage delivery logistics, and support changes when possible—so the experience stays seamless.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <div class="kicker">FAQ</div>
+      <h2 class="gold">Common Questions.</h2>
+
+      <div class="faq">
+        <details>
+          <summary>What types of events can you help with?</summary>
+          <p>We support premium access for sports, concerts, and major live events. Submit what you’re looking for and we’ll respond with options and next steps.</p>
+        </details>
+
+        <details>
+          <summary>Do I need to buy season tickets?</summary>
+          <p>No. CubLion is designed to provide premium access without requiring full-season ownership. You can request access event-by-event or set up ongoing planning.</p>
+        </details>
+
+        <details>
+          <summary>How does pricing work?</summary>
+          <p>Pricing depends on the event, seating tier, availability, and timing. We focus on delivering clean options with transparent tradeoffs so you can decide quickly.</p>
+        </details>
+
+        <details>
+          <summary>How fast do you respond?</summary>
+          <p>Most requests receive an initial response within 24 hours. Time-sensitive requests can often be handled sooner depending on inventory and deadlines.</p>
+        </details>
+
+        <details>
+          <summary>Can you help with corporate needs (client entertainment, employee rewards)?</summary>
+          <p>Yes. We regularly support corporate use cases such as client hosting, recruiting, executive travel, and recognition programs.</p>
+        </details>
+
+        <details>
+          <summary>Do you resell tickets?</summary>
+          <p>When needed, we may coordinate resale or exchanges through appropriate channels. Our priority is reliable delivery and minimizing friction for the client experience.</p>
+        </details>
       </div>
     </div>
   </div>
