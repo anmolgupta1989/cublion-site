@@ -163,6 +163,11 @@
     color: var(--white);
   }
 
+  /* Critical for anchor links with fixed nav */
+  section.anchor{
+    scroll-margin-top: 120px;
+  }
+
   .container{
     max-width: 1100px;
     margin: 0 auto;
@@ -210,6 +215,40 @@
   .card h3{ margin:0 0 8px 0; font-size: 18px; }
   .card p{ margin:0; font-size: 16px; line-height: 1.65; opacity: .92; }
 
+  /* ---------- FORM (homepage contact block) ---------- */
+  .form-wrap{
+    max-width: 640px;
+    margin: 28px auto 0;
+    text-align: left;
+  }
+  label{
+    display:block;
+    font-weight: 700;
+    font-size: 13px;
+    opacity: .9;
+    margin-bottom: 6px;
+  }
+  .field{
+    width:100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border:none;
+    outline:none;
+    font-family:'Inter', sans-serif;
+    font-size: 16px;
+  }
+  section.dark .field{
+    background: rgba(255,255,255,0.92);
+    color: #111;
+  }
+  .small-note{
+    font-size: 12px;
+    opacity: .78;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
   footer{
     text-align:center;
     padding: 44px 18px;
@@ -218,7 +257,6 @@
     font-size: 13px;
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px){
     .nav-links{ display:none; }
   }
@@ -237,7 +275,8 @@
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <!-- Contact should jump to the Contact block on THIS page -->
+      <a href="index.html#contact">Contact</a>
     </div>
 
     <div></div>
@@ -255,10 +294,11 @@
   </p>
 
   <div class="cta-row">
-    <button class="cta" onclick="location.href='contact.html'">Request Access</button>
+    <button class="cta" onclick="location.href='index.html#contact'">Request Access</button>
   </div>
 </header>
 
+<!-- Alternate colors: DARK / LIGHT / DARK / LIGHT -->
 <section class="dark">
   <div class="container">
     <h2 class="gold">Our Story</h2>
@@ -274,8 +314,8 @@
   <div class="container">
     <h2 class="gold">How It Works</h2>
     <p>
-      Submit a request, receive curated options, and confirm — we coordinate delivery via secure mobile transfer. We’ll also help manage selling
-      and reallocation when needed. The full workflow (and a diagram we’ll add next) lives on the How It Works page.
+      Submit a request, receive curated options, and confirm — we coordinate delivery via secure mobile transfer.
+      We also help manage selling and reallocation when needed. The full workflow (and diagram we’ll add next) lives on the How It Works page.
     </p>
     <a class="link" href="how-it-works.html">See the full process →</a>
 
@@ -300,10 +340,43 @@
   <div class="container">
     <h2 class="gold">FAQ</h2>
     <p>
-      See detailed answers about pricing, delivery, supported leagues/events, resale support, and how we work with businesses,
+      Detailed answers on pricing, delivery, supported leagues/events, resale support, and how we work with businesses,
       HNW clients, and individuals.
     </p>
     <a class="link" href="faq.html">Read FAQs →</a>
+  </div>
+</section>
+
+<!-- Contact is LIGHT to keep alternating colors -->
+<section id="contact" class="anchor">
+  <div class="container">
+    <h2 class="gold">Contact</h2>
+    <p>
+      Tell us what you’re looking for — event, city, date range, seating preferences, party size, and budget — and we’ll respond with next steps.
+    </p>
+
+    <form class="form-wrap" action="https://formspree.io/f/mreadqad" method="POST">
+      <label for="name">Full name</label>
+      <input class="field" id="name" name="name" type="text" required />
+
+      <label for="email">Email</label>
+      <input class="field" id="email" name="email" type="email" required />
+
+      <label for="phone">Phone (optional)</label>
+      <input class="field" id="phone" name="phone" type="text" />
+
+      <label for="company">Company (optional)</label>
+      <input class="field" id="company" name="company" type="text" />
+
+      <label for="message">What are you looking for?</label>
+      <textarea class="field" id="message" name="message" rows="6" required></textarea>
+
+      <button class="cta" type="submit">Submit Inquiry</button>
+
+      <div class="small-note">
+        By submitting, you agree to be contacted regarding your request. We don’t sell your information.
+      </div>
+    </form>
   </div>
 </section>
 
