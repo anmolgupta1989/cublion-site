@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>How It Works | CubLion Entertainment</title>
+<title>How it Works | CubLion Entertainment</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -14,7 +14,6 @@
   --black:#0B0F16;
   --white:#FFFFFF;
 }
-
 body{
   margin:0;
   font-family:'Inter', sans-serif;
@@ -35,7 +34,6 @@ nav{
   z-index: 1000;
   padding: 18px 28px;
 }
-
 .nav-inner{
   max-width: 1200px;
   margin: 0 auto;
@@ -43,7 +41,6 @@ nav{
   grid-template-columns: 72px 1fr 72px;
   align-items: center;
 }
-
 .nav-insignia{
   height: 52px;
   width: auto;
@@ -58,7 +55,6 @@ nav{
   gap: 36px;
   align-items: center;
 }
-
 .nav-links a{
   color: var(--gold);
   text-decoration: none;
@@ -70,12 +66,11 @@ nav{
 
 /* PAGE */
 .container{
-  max-width: 950px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 160px 20px 100px;
   text-align: center;
 }
-
 .center-lion{
   height: 120px;
   width: auto;
@@ -83,43 +78,32 @@ nav{
   display:block;
   filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
 }
-
 .gold{
   background: linear-gradient(90deg,#C6A56A,#E0C48F);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-
 h1{
   font-family:'Playfair Display', serif;
   font-size: 44px;
   margin: 0 0 14px 0;
 }
-
 .lede{
   max-width: 860px;
   margin: 0 auto 26px;
   font-size: 18px;
   opacity: .92;
+  text-align: center;
 }
 
 .section{
   margin-top: 48px;
   text-align: left;
 }
-
 h2{
   font-family:'Playfair Display', serif;
   font-size: 28px;
   margin: 0 0 14px 0;
-}
-
-.card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  padding: 18px 18px;
-  margin-top: 12px;
 }
 
 .flow{
@@ -130,7 +114,12 @@ h2{
 @media (min-width: 900px){
   .flow{ grid-template-columns: repeat(3, 1fr); }
 }
-
+.card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 18px;
+}
 .step-num{
   display:inline-flex;
   align-items:center;
@@ -144,42 +133,17 @@ h2{
   margin-bottom: 10px;
 }
 
-.faq details{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  padding: 16px 16px;
-  margin-top: 12px;
-}
-
-.faq summary{
-  cursor: pointer;
-  font-weight: 800;
-  color: #fff;
-  list-style: none;
-}
-.faq summary::-webkit-details-marker{ display:none; }
-
-.faq p{
-  margin: 10px 0 0 0;
+.note{
+  margin-top: 18px;
   opacity: .92;
 }
 
-.cta-row{
-  margin-top: 44px;
-  text-align: center;
-}
-
-a.cta{
-  display:inline-block;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: var(--gold);
-  color: #111;
+.link{
+  color: var(--gold);
   font-weight: 800;
-  text-decoration:none;
+  text-decoration: none;
 }
-a.cta:hover{ opacity:.92; }
+.link:hover{ opacity:.85; }
 
 @media (max-width: 900px){
   .nav-links{ display:none; }
@@ -196,9 +160,9 @@ a.cta:hover{ opacity:.92; }
     </a>
 
     <div class="nav-links">
-      <a href="what-we-do.html">What We Do</a>
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </div>
 
@@ -209,105 +173,49 @@ a.cta:hover{ opacity:.92; }
 <div class="container">
   <img src="lion.png" class="center-lion" alt="CubLion">
 
-  <h1 class="gold">How It Works</h1>
+  <h1 class="gold">How it Works</h1>
   <p class="lede">
-    A clean request-to-delivery workflow designed for speed, clarity, and disciplined execution.
-    (We’ll add diagrams and more visuals here next.)
+    A structured request-to-delivery workflow for acquiring and selling premium tickets — designed for speed, clarity, and clean execution.
   </p>
 
   <div class="section">
-    <h2 class="gold">The Process</h2>
-
+    <h2 class="gold">Acquire Tickets</h2>
     <div class="flow">
       <div class="card">
         <div class="step-num">1</div>
         <strong>Request</strong>
         <p style="margin:8px 0 0 0; opacity:.92;">
-          Tell us the event, city, date, seating preferences, party size, and budget.
+          Share the event, city, date, seating preferences, party size, and budget.
         </p>
       </div>
       <div class="card">
         <div class="step-num">2</div>
         <strong>Curate</strong>
         <p style="margin:8px 0 0 0; opacity:.92;">
-          We source options through verified channels and relationships, then return a clean shortlist.
+          We source options through verified channels and relationships, then provide a clean shortlist.
         </p>
       </div>
       <div class="card">
         <div class="step-num">3</div>
         <strong>Execute</strong>
         <p style="margin:8px 0 0 0; opacity:.92;">
-          You confirm. We coordinate secure mobile transfer and remain available for support as needed.
+          You confirm; we coordinate secure mobile transfer (typically via Ticketmaster/SeatGeek depending on the venue).
         </p>
       </div>
     </div>
+
+    <p class="note">
+      We’re adding a visual diagram here next. For detailed questions (pricing, delivery, resale, and scope), see the
+      <a class="link" href="faq.html">FAQ page →</a>
+    </p>
   </div>
 
-  <div class="section faq">
-    <h2 class="gold">FAQs</h2>
-
-    <details>
-      <summary>What events do you focus on?</summary>
-      <p>
-        We primarily focus on major U.S. sports — NBA, NFL, MLB, and NHL — while expanding into concerts,
-        MLS, and other live events depending on market availability. If you have a specific venue or event in mind,
-        reach out and we’ll confirm.
-      </p>
-    </details>
-
-    <details>
-      <summary>Who do you work with?</summary>
-      <p>
-        We serve small and mid-sized businesses, high-net-worth individuals, family offices, private groups,
-        and also individuals looking for a single game solution. Party size and budget vary — our job is to curate options
-        and execute cleanly.
-      </p>
-    </details>
-
-    <details>
-      <summary>How are tickets delivered?</summary>
-      <p>
-        Tickets are typically delivered via secure mobile transfer to your email or phone number through the
-        venue’s primary ticketing platform (often Ticketmaster or SeatGeek, depending on the event).
-      </p>
-    </details>
-
-    <details>
-      <summary>How quickly do you respond?</summary>
-      <p>
-        We aim to respond quickly and commit to an initial response within 24 hours. Many requests are handled sooner,
-        depending on timing and complexity.
-      </p>
-    </details>
-
-    <details>
-      <summary>How does pricing work?</summary>
-      <p>
-        Pricing depends on demand, seating tier, timing, and availability. When possible, our sourcing methods can align
-        pricing with strong value relative to market conditions, including scenarios where access can resemble season-level pricing.
-        We present clean options with clear tradeoffs so you can decide efficiently.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do I need to commit to season tickets?</summary>
-      <p>
-        No. Our model is designed to provide premium access without requiring full-season ownership.
-        You can request access event-by-event, or coordinate ongoing planning.
-      </p>
-    </details>
-
-    <details>
-      <summary>Is CubLion a resale marketplace?</summary>
-      <p>
-        CubLion is not a public marketplace. We operate as an access and execution platform,
-        coordinating sourcing, allocation, and delivery through verified channels.
-      </p>
-    </details>
-  </div>
-
-  <div class="cta-row">
-    <a class="cta" href="contact.html">Request Access</a>
+  <div class="section">
+    <h2 class="gold">Sell Tickets</h2>
+    <p style="opacity:.92;">
+      If you’re looking to offload tickets — whether it’s a single game or an ongoing inventory — CubLion can help coordinate resale and reallocation.
+      We’ll incorporate your resale workflow into the FAQ next as we ask the next question set.
+    </p>
   </div>
 </div>
 
