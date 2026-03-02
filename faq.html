@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ | CubLion Entertainment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1F2F4A;
+  --gold:#C6A56A;
+  --black:#0B0F16;
+  --white:#FFFFFF;
+}
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.75;
+}
+
+/* NAV */
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(31,47,74,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  padding: 18px 28px;
+}
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+}
+.nav-insignia{
+  height: 52px;
+  width: auto;
+  display:block;
+  transition: transform .2s ease;
+}
+.nav-insignia:hover{ transform: scale(1.05); }
+
+.nav-links{
+  justify-self: center;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.nav-links a{
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: opacity .15s ease;
+}
+.nav-links a:hover{ opacity:.85; }
+
+/* PAGE */
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 160px 20px 100px;
+  text-align: center;
+}
+.center-lion{
+  height: 120px;
+  width: auto;
+  margin: 10px auto 22px;
+  display:block;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
+}
+.gold{
+  background: linear-gradient(90deg,#C6A56A,#E0C48F);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+h1{
+  font-family:'Playfair Display', serif;
+  font-size: 44px;
+  margin: 0 0 14px 0;
+}
+.lede{
+  max-width: 880px;
+  margin: 0 auto 24px;
+  font-size: 18px;
+  opacity: .92;
+}
+
+.faq{
+  text-align: left;
+  margin-top: 30px;
+}
+
+details{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 16px 16px;
+  margin-top: 12px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight: 900;
+  list-style: none;
+}
+summary::-webkit-details-marker{ display:none; }
+
+details p{
+  margin: 10px 0 0 0;
+  opacity: .92;
+}
+
+@media (max-width: 900px){
+  .nav-links{ display:none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" aria-label="Home">
+      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
+    </a>
+
+    <div class="nav-links">
+      <a href="our-story.html">Our Story</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div></div>
+  </div>
+</nav>
+
+<div class="container">
+  <img src="lion.png" class="center-lion" alt="CubLion">
+
+  <h1 class="gold">FAQ</h1>
+  <p class="lede">
+    Detailed answers on supported leagues/events, who we serve, ticket delivery, response times, pricing approach, and resale support.
+  </p>
+
+  <div class="faq">
+
+    <details>
+      <summary>What events do you focus on?</summary>
+      <p>
+        We focus primarily on major American sports — NBA, NFL, MLB, and NHL. We are constantly expanding our network into concerts,
+        MLS, and other live events. If you have questions about a specific event, venue, or city, please reach out via the Contact page.
+      </p>
+    </details>
+
+    <details>
+      <summary>Who do you work with?</summary>
+      <p>
+        We serve a wide range of clients — from small and mid-sized businesses to high-net-worth individuals, family offices, and private groups.
+        We also work with individuals looking for a single game solution. No customer is “too small” — party size and budgets vary,
+        and we’ll work with you regardless of the request when possible.
+      </p>
+    </details>
+
+    <details>
+      <summary>How are tickets delivered?</summary>
+      <p>
+        Tickets are typically delivered directly to your email or phone number via secure mobile transfer.
+        Most sporting events are hosted through major ticketing platforms (often Ticketmaster or SeatGeek depending on the venue).
+        Provide your most accurate account/contact information and we’ll handle delivery coordination.
+      </p>
+    </details>
+
+    <details>
+      <summary>How quickly do you respond?</summary>
+      <p>
+        We prioritize fast response times. We aim to respond within 24 hours, and many requests are handled sooner depending on timing,
+        complexity, and availability.
+      </p>
+    </details>
+
+    <details>
+      <summary>How does pricing work?</summary>
+      <p>
+        Pricing is customizable and depends on the event, timing, and seating tier. In many instances, we’re able to secure tickets at
+        full-season level prices (i.e., face value) or less. This is driven by our ability to leverage long-standing relationships and
+        network access across major leagues, and by coordinating inventory efficiently. When we present options, we include clear tradeoffs
+        so you can choose quickly with confidence.
+      </p>
+    </details>
+
+    <details>
+      <summary>Do you help clients sell tickets too?</summary>
+      <p>
+        Yes. CubLion supports both sides of the marketplace: acquiring tickets and helping clients offload tickets when plans change.
+        Resale support can include coordinating buyer interest within networks and using appropriate external channels when necessary.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is CubLion a resale marketplace?</summary>
+      <p>
+        CubLion functions as a marketplace and execution platform — helping clients acquire premium access and coordinate selling when needed.
+        We’re not a “browse-and-click” public exchange; we operate through curated sourcing, structured coordination, and verified delivery.
+      </p>
+    </details>
+
+  </div>
+</div>
+
+</body>
+</html>
