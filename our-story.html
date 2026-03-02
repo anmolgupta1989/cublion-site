@@ -23,10 +23,64 @@ body{
   line-height:1.75;
 }
 
+/* ---------- NAV ---------- */
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(31,47,74,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  padding: 18px 28px;
+}
+
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+}
+
+.nav-insignia{
+  height: 52px;
+  width: auto;
+  display:block;
+  transition: transform .2s ease;
+}
+
+.nav-insignia:hover{
+  transform: scale(1.05);
+}
+
+.nav-links{
+  justify-self: center;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-links a{
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: opacity .15s ease;
+}
+
+.nav-links a:hover{
+  opacity:.8;
+}
+
+/* ---------- PAGE CONTENT ---------- */
+
 .container{
   max-width: 900px;
   margin: 0 auto;
-  padding: 120px 20px 80px;
+  padding: 180px 20px 100px;
 }
 
 h1{
@@ -66,10 +120,33 @@ p{
 .back:hover{
   opacity:.8;
 }
+
+@media (max-width: 900px){
+  .nav-links{
+    display:none;
+  }
+}
 </style>
 </head>
 
 <body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" aria-label="Home">
+      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html#about">What We Do</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="index.html#model">How it Works</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div></div>
+  </div>
+</nav>
 
 <div class="container">
 
@@ -84,39 +161,27 @@ Growing up, access to professional sports wasn’t always easy. My father, an im
 </p>
 
 <p>
-I played. I watched. I studied the games. And I always knew sports would remain part of my life.
+Years later, during medical residency, time became scarce again. But the desire to stay connected to the sports world never left. What started as pooling resources for season access evolved into something more structured and scalable.
+</p>
+
+<h2>From Shared Access to Structured Platform</h2>
+
+<p>
+What began as a practical solution to attend games became a platform for connection — strengthening friendships, building professional relationships, and supporting meaningful client experiences.
 </p>
 
 <p>
-Years later, during medical residency, time became scarce again. But the desire to stay connected to the sports world never left. What started as borrowing tickets from a friend evolved into something bigger: pooling resources, structuring season access intelligently, and learning how to manage premium tickets efficiently.
-</p>
-
-<h2>From Shared Season Access to Structured Platform</h2>
-
-<p>
-What began as a practical solution to attend games became something far more powerful — a platform for connection. Sporting events weren’t just entertainment. They were relationship accelerators. They were networking environments. They were moments that strengthened friendships, client relationships, and professional communities.
-</p>
-
-<p>
-And yet, the premium ticket market itself was chaotic — volatile pricing, fragmented supply, and inefficient coordination.
-</p>
-
-<p>
-So we built structure around it.
-</p>
-
-<p>
-Over several years, we’ve developed a broad network of season ticket holders, partners, and relationships across major professional leagues. Rather than requiring clients to commit to full-season ownership, CubLion provides structured, curated access — event by event.
+Over time, we built systems to manage allocation, resale coordination, exchanges, and logistics efficiently. Today, CubLion provides curated, structured access without requiring full-season ownership from clients.
 </p>
 
 <h2>Why It Matters</h2>
 
 <p>
-CubLion was built quietly, refined through real coordination, real allocation management, and real client relationships. It combines disciplined execution with a lifelong love of sports.
+CubLion operates at the intersection of discipline and passion — combining structured execution with a lifelong love of sports. Built while practicing medicine full-time, the platform reflects thoughtful growth, careful coordination, and long-term relationship building.
 </p>
 
 <p>
-This isn’t about flashy branding. It’s about building systems that work — and scaling them thoughtfully.
+This is not about hype. It’s about building something durable, scalable, and meaningful.
 </p>
 
 <a href="index.html" class="back">← Back to Home</a>
