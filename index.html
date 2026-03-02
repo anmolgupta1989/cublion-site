@@ -5,171 +5,307 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CubLion Entertainment</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; }
 
-:root{
-  --navy:#1F2F4A;
-  --gold:#C6A56A;
-  --black:#0B0F16;
-  --white:#FFFFFF;
-}
+  :root{
+    --navy:#1F2F4A;
+    --gold:#C6A56A;
+    --black:#0B0F16;
+    --white:#FFFFFF;
+  }
 
-body{
-  margin:0;
-  font-family:'Cinzel', serif;
-  background: var(--navy);
-  color: var(--white);
-}
+  body{
+    margin:0;
+    font-family:'Cinzel', serif;
+    background: var(--navy);
+    color: var(--white);
+  }
 
-/* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(31,47,74,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  padding: 20px 28px;
-}
+  /* IMPORTANT: prevent ellipsis/nowrap truncation anywhere */
+  p, li, h1, h2, h3, a, span, div{
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
 
-.nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-}
+  /* ---------- NAV (logo left + centered links) ---------- */
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(31,47,74,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+    padding: 18px 28px;
+  }
 
-.nav-insignia{
-  height: 54px;
-  transition: transform .2s ease, filter .2s ease;
-}
+  .nav-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 72px 1fr 72px; /* left logo / centered links / spacer */
+    align-items: center;
+  }
 
-.nav-insignia:hover{
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(198,165,106,.35));
-}
+  .nav-insignia{
+    height: 54px;
+    width: auto;
+    display:block;
+    transition: transform .2s ease, filter .2s ease;
+  }
+  .nav-insignia:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(198,165,106,.30));
+  }
 
-.nav-links{
-  justify-self: center;
-  display: flex;
-  gap: 36px;
-}
+  .nav-links{
+    justify-self: center;
+    display: flex;
+    gap: 34px;
+    align-items: center;
+  }
 
-.nav-links a{
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 22px;
-  letter-spacing: 0.06em;
-}
+  .nav-links a{
+    position: relative;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    padding: 6px 2px;
+    transition: opacity .15s ease;
+  }
+  .nav-links a:hover{ opacity:.82; }
 
-.nav-links a:hover{
-  opacity:.8;
-}
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    height:2px;
+    width:100%;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease;
+    opacity: .9;
+  }
+  .nav-links a:hover::after{ transform: scaleX(1); }
 
-/* HERO */
-header{
-  text-align:center;
-  padding: 220px 20px 120px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  /* ---------- HERO ---------- */
+  header{
+    text-align:center;
+    padding: 190px 20px 90px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-header img.hero-logo{
-  width: 900px;
-  max-width: 95vw;
-  height: auto;
-  margin-bottom: 60px;
-}
+  header img.hero-logo{
+    width: 900px;
+    max-width: 92vw;
+    height: auto;
+    margin-bottom: 44px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
 
-.gold{
-  background: linear-gradient(90deg, #C6A56A, #E0C48F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  .gold{
+    background: linear-gradient(90deg, #C6A56A, #E0C48F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-h1{
-  font-size: 34px;
-  margin: 0 0 22px 0;
-  letter-spacing: 0.02em;
-}
+  h1{
+    font-size: 30px;
+    margin: 0 0 18px 0;
+    line-height: 1.25;
+  }
 
-.subhead{
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.9;
-  opacity: 0.92;
-  letter-spacing: 0.02em;
-}
+  .subhead{
+    max-width: 920px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    opacity: 0.92;
+  }
 
-.cta-row{
-  margin-top: 36px;
-}
+  .cta-row{ margin-top: 28px; }
 
-button.cta{
-  padding: 16px 34px;
-  background: var(--gold);
-  border: none;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-  color: #111;
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family:'Cinzel', serif;
-}
+  .cta{
+    padding: 16px 34px;
+    background: var(--gold);
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #111;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  .cta:hover{ opacity:.9; }
 
-button.cta:hover{
-  opacity: .9;
-}
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--white);
+    color: var(--navy);
+  }
+  section.dark{
+    background: var(--navy);
+    color: var(--white);
+  }
 
-/* SECTIONS */
-section{
-  padding: 100px 20px;
-  text-align: center;
-  background: var(--white);
-  color: var(--navy);
-}
+  .container{
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-section.dark{
-  background: var(--navy);
-  color: var(--white);
-}
+  .kicker{
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 12px;
+    font-family:'Cinzel', serif;
+  }
 
-section h2{
-  font-size: 34px;
-  margin: 0;
-}
+  section h2{
+    font-size: 34px;
+    margin: 0;
+    line-height: 1.2;
+  }
 
-section p{
-  max-width: 900px;
-  margin: 16px auto 0;
-  font-size: 16px;
-  line-height: 1.95;
-  opacity: 0.92;
-}
+  section p{
+    max-width: 920px;
+    margin: 16px auto 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.95;
+    opacity: 0.92;
+  }
 
-.container{
-  max-width: 1100px;
-  margin: 0 auto;
-}
+  /* ---------- CARDS ---------- */
+  .grid{
+    display: grid;
+    gap: 18px;
+    margin-top: 34px;
+    text-align: left;
+  }
+  @media (min-width: 900px){
+    .grid-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid-2{ grid-template-columns: repeat(2, 1fr); }
+  }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding: 44px 18px;
-  background: var(--black);
-  color: rgba(255,255,255,0.75);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-}
+  .card{
+    border-radius: 18px;
+    padding: 22px;
+    border: 1px solid rgba(31,47,74,0.12);
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+  }
+
+  section.dark .card{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+  }
+
+  .card h3{
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  .card p{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.85;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ---------- LINK BUTTON ---------- */
+  .ghost{
+    display:inline-block;
+    margin-top: 22px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(198,165,106,0.55);
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 650;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    background: rgba(255,255,255,0.02);
+  }
+  .ghost:hover{
+    background: rgba(198,165,106,0.10);
+  }
+
+  /* ---------- CONTACT FORM ---------- */
+  .form-wrap{
+    max-width: 640px;
+    margin: 34px auto 0;
+    text-align: left;
+  }
+
+  label{
+    display:block;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+    font-size: 13px;
+    opacity: 0.9;
+    font-family:'Inter', sans-serif;
+  }
+
+  .field{
+    width:100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-family:'Inter', sans-serif;
+    font-size: 15px;
+    background: rgba(255,255,255,0.92);
+    color:#111;
+  }
+
+  .small-note{
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-family:'Inter', sans-serif;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding: 44px 18px;
+    background: var(--black);
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    font-family:'Cinzel', serif;
+  }
+
+  @media (max-width: 980px){
+    .nav-links{ gap: 18px; }
+    .nav-links a{ font-size: 18px; }
+    header{ padding: 175px 16px 70px; }
+    h1{ font-size: 26px; }
+  }
 </style>
 </head>
 
@@ -177,15 +313,15 @@ footer{
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html">
+    <a href="index.html" aria-label="Home">
       <img src="lion.png" class="nav-insignia" alt="CubLion Home">
     </a>
 
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Primary navigation">
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div></div>
@@ -193,27 +329,103 @@ footer{
 </nav>
 
 <header>
-  <img src="logo.png" class="hero-logo" alt="CubLion Entertainment" />
+  <img src="logo.png" class="hero-logo" alt="CubLion Entertainment">
+
   <h1 class="gold">The Front Row. Networked.</h1>
+
   <p class="subhead">
-    CubLion Entertainment is a premium access network for sports and select live events—built for busy professionals and
-    businesses who want better seats, less friction, and a smarter way to buy and sell within a trusted ecosystem.
+    CubLion Entertainment is a premium access network for sports and select live events—built for busy professionals and businesses
+    who want better seats, less friction, and a smarter way to buy and sell within a trusted ecosystem.
   </p>
 
   <div class="cta-row">
-    <button class="cta" onclick="location.href='#contact'">Request Access</button>
+    <button class="cta" onclick="location.href='contact.html'">Request Access</button>
   </div>
 </header>
 
-<section id="story" class="dark">
+<section id="what-we-do">
   <div class="container">
+    <div class="kicker">What we do</div>
+    <h2 class="gold">A Smarter Infrastructure for Premium Access.</h2>
+    <p>
+      The ticket market is fragmented, volatile, and time-consuming. CubLion simplifies the process: tell us what you want,
+      and our network coordinates sourcing, allocation, and execution—quickly and cleanly.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Strategic Sourcing</h3>
+        <p>We pursue the best available options across verified channels and trusted relationships.</p>
+      </div>
+      <div class="card">
+        <h3>Network Allocation</h3>
+        <p>We communalize premium access—enabling clients to get in without full-season commitments.</p>
+      </div>
+      <div class="card">
+        <h3>Clean Execution</h3>
+        <p>From request intake to delivery logistics and resale support, we manage the process end-to-end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="our-story" class="dark">
+  <div class="container">
+    <div class="kicker">Our story</div>
     <h2 class="gold">Built for Connection—Not Just Tickets.</h2>
     <p>
       CubLion started as a simple attempt to stay connected to sports during a demanding medical career.
-      What grew from shared season access wasn’t just a better way to manage premium tickets—it was a community.
-      The front row became a place where meaningful relationships formed and professional bonds strengthened.
-      That’s what we built CubLion to deliver: more time in better seats, less friction, and a trusted network that makes it easy to buy when you want to go—and sell when plans change.
+      But what grew from shared season access wasn’t just a better way to manage premium tickets—it was a community.
+      The front row became a place where meaningful relationships formed, business bonds strengthened, and experiences were shared.
     </p>
+
+    <p style="margin-top:14px;">
+      That’s what we built CubLion to deliver: more time in better seats, less friction, and a trusted network that makes it easy to buy
+      when you want to go—and sell when plans change.
+    </p>
+
+    <a class="ghost" href="our-story.html">Read the full story</a>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="kicker">How it works</div>
+    <h2 class="gold">Access. Re-Engineered.</h2>
+    <p>
+      Submit a request, get curated options, and confirm. Our network handles sourcing, allocation, and delivery—plus resale support when needed.
+      Full diagrams and deeper detail are available on the How it Works page.
+    </p>
+
+    <a class="ghost" href="how-it-works.html">View how it works</a>
+  </div>
+</section>
+
+<section id="contact" class="dark">
+  <div class="container">
+    <div class="kicker">Contact</div>
+    <h2 class="gold">Connect With Us</h2>
+    <p>Tell us what you’re looking for and we’ll respond with next steps.</p>
+
+    <form class="form-wrap" action="https://formspree.io/f/mreadqad" method="POST">
+      <label for="name">Full name</label>
+      <input class="field" id="name" name="name" type="text" required />
+
+      <label for="email">Email</label>
+      <input class="field" id="email" name="email" type="email" required />
+
+      <label for="company">Company (optional)</label>
+      <input class="field" id="company" name="company" type="text" />
+
+      <label for="message">What access are you looking for?</label>
+      <textarea class="field" id="message" name="message" rows="5" required></textarea>
+
+      <button class="cta" type="submit" style="width:100%;">Submit Inquiry</button>
+
+      <div class="small-note">
+        By submitting, you agree to be contacted regarding your request. We don’t sell your information.
+      </div>
+    </form>
   </div>
 </section>
 
