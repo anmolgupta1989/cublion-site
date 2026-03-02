@@ -23,8 +23,7 @@ body{
   line-height:1.75;
 }
 
-/* ---------- NAV ---------- */
-
+/* NAV */
 nav{
   position: fixed;
   top: 0;
@@ -51,10 +50,7 @@ nav{
   display:block;
   transition: transform .2s ease;
 }
-
-.nav-insignia:hover{
-  transform: scale(1.05);
-}
+.nav-insignia:hover{ transform: scale(1.05); }
 
 .nav-links{
   justify-self: center;
@@ -70,23 +66,22 @@ nav{
   font-size: 20px;
   transition: opacity .15s ease;
 }
+.nav-links a:hover{ opacity:.85; }
 
-.nav-links a:hover{
-  opacity:.8;
-}
-
-/* ---------- PAGE CONTENT ---------- */
-
+/* PAGE */
 .container{
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 180px 20px 100px;
+  padding: 160px 20px 100px;
+  text-align: center;
 }
 
-h1{
-  font-family:'Playfair Display', serif;
-  font-size:42px;
-  margin-bottom:30px;
+.center-lion{
+  height: 120px;
+  width: auto;
+  margin: 10px auto 22px;
+  display:block;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
 }
 
 .gold{
@@ -95,36 +90,31 @@ h1{
   -webkit-text-fill-color:transparent;
 }
 
-h2{
+h1{
   font-family:'Playfair Display', serif;
-  font-size:26px;
-  margin-top:60px;
-  margin-bottom:16px;
+  font-size: 44px;
+  margin: 0 0 14px 0;
+}
+
+.section{
+  text-align: left;
+  margin-top: 28px;
 }
 
 p{
   font-size:18px;
-  margin-bottom:18px;
-  opacity:.95;
+  margin: 0 0 16px 0;
+  opacity: .95;
 }
 
-.back{
-  display:inline-block;
-  margin-top:60px;
-  text-decoration:none;
-  color:var(--gold);
-  font-weight:600;
-  font-size:16px;
-}
-
-.back:hover{
-  opacity:.8;
+h2{
+  font-family:'Playfair Display', serif;
+  font-size: 28px;
+  margin: 34px 0 12px 0;
 }
 
 @media (max-width: 900px){
-  .nav-links{
-    display:none;
-  }
+  .nav-links{ display:none; }
 }
 </style>
 </head>
@@ -138,10 +128,10 @@ p{
     </a>
 
     <div class="nav-links">
-      <a href="index.html#about">What We Do</a>
+      <a href="what-we-do.html">What We Do</a>
       <a href="our-story.html">Our Story</a>
-      <a href="index.html#model">How it Works</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div></div>
@@ -149,43 +139,58 @@ p{
 </nav>
 
 <div class="container">
+  <img src="lion.png" class="center-lion" alt="CubLion">
 
-<h1 class="gold">Built from Personal Passion. Designed for Modern Professionals.</h1>
+  <h1 class="gold">Our Story</h1>
 
-<p>
-CubLion began long before it became a business.
-</p>
+  <div class="section">
+    <p>CubLion began long before it became a business.</p>
 
-<p>
-Growing up, access to professional sports wasn’t always easy. My father, an immigrant physician, worked tirelessly to build a life for our family. Time and resources were limited. Yet sports — the camaraderie, the tension of competition, the shared emotional highs and lows — were always central to who I was.
-</p>
+    <p>
+      Growing up, access to professional sports wasn’t always easy. My father, an immigrant physician, worked tirelessly
+      to build a life for our family. Time and resources were limited. Yet sports — the camaraderie, the tension of competition,
+      the shared emotional highs and lows — were always central to who I was.
+    </p>
 
-<p>
-Years later, during medical residency, time became scarce again. But the desire to stay connected to the sports world never left. What started as pooling resources for season access evolved into something more structured and scalable.
-</p>
+    <p>
+      I played. I watched. I studied the games. And I always knew sports would remain part of my life.
+    </p>
 
-<h2>From Shared Access to Structured Platform</h2>
+    <p>
+      Years later, during medical residency, time became scarce again. But the desire to stay connected to the sports world never left.
+      What started as borrowing tickets from a friend evolved into something bigger: pooling resources, structuring season access intelligently,
+      and learning how to manage premium tickets efficiently.
+    </p>
 
-<p>
-What began as a practical solution to attend games became a platform for connection — strengthening friendships, building professional relationships, and supporting meaningful client experiences.
-</p>
+    <h2 class="gold">From Shared Season Access to Structured Platform</h2>
 
-<p>
-Over time, we built systems to manage allocation, resale coordination, exchanges, and logistics efficiently. Today, CubLion provides curated, structured access without requiring full-season ownership from clients.
-</p>
+    <p>
+      What began as a practical solution to attend games became something far more powerful — a platform for connection.
+      Sporting events weren’t just entertainment. They were relationship accelerators. They were networking environments.
+      They were moments that strengthened friendships, client relationships, and professional communities.
+    </p>
 
-<h2>Why It Matters</h2>
+    <p>
+      And yet, the premium ticket market itself was chaotic — volatile pricing, fragmented supply, and inefficient coordination.
+      So we built structure around it.
+    </p>
 
-<p>
-CubLion operates at the intersection of discipline and passion — combining structured execution with a lifelong love of sports. Built while practicing medicine full-time, the platform reflects thoughtful growth, careful coordination, and long-term relationship building.
-</p>
+    <p>
+      Over the past several years, we’ve developed a broad network of season ticket holders, partners, and relationships across major professional leagues.
+      Rather than requiring clients to commit to full-season ownership, CubLion provides structured, curated access — event by event.
+    </p>
 
-<p>
-This is not about hype. It’s about building something durable, scalable, and meaningful.
-</p>
+    <h2 class="gold">Why It Matters</h2>
 
-<a href="index.html" class="back">← Back to Home</a>
+    <p>
+      CubLion was built quietly, refined through real coordination, real allocation management, and real client relationships.
+      It combines disciplined execution with a lifelong love of sports.
+    </p>
 
+    <p>
+      This isn’t about flashy branding. It’s about building systems that work — and scaling them thoughtfully.
+    </p>
+  </div>
 </div>
 
 </body>
