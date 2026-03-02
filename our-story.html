@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Our Story | CubLion Entertainment</title>
+<title>Our Story | CubLion</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -18,8 +18,9 @@
 body{
   margin:0;
   font-family:'Cinzel', serif;
-  background: var(--navy);
-  color: var(--white);
+  background: var(--white);
+  color: var(--navy);
+  line-height: 1.9;
 }
 
 /* NAV */
@@ -31,8 +32,8 @@ nav{
   background: rgba(31,47,74,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 20px 28px;
   z-index: 1000;
+  padding: 20px 28px;
 }
 
 .nav-inner{
@@ -45,11 +46,6 @@ nav{
 
 .nav-insignia{
   height: 54px;
-  transition: transform .2s ease, filter .2s ease;
-}
-.nav-insignia:hover{
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(198,165,106,.30));
 }
 
 .nav-links{
@@ -69,149 +65,81 @@ nav{
   opacity:.8;
 }
 
-/* HERO */
-header{
-  text-align:center;
-  padding: 240px 20px 40px;
+/* PAGE HEADER */
+.page-header{
+  padding-top: 200px;
+  text-align: center;
 }
 
-/* 🔥 Enlarged Lion */
-.top-lion{
-  width: 420px;           /* ~4x larger */
-  max-width: 85vw;        /* responsive on smaller screens */
-  margin-bottom: 30px;
-  filter: drop-shadow(0 0 18px rgba(198,165,106,.25));
+.large-insignia{
+  width: 260px;   /* 4x larger */
+  margin-bottom: 40px;
 }
 
-.gold{
+.page-title{
+  font-size: 42px;
+  margin: 0;
   background: linear-gradient(90deg, #C6A56A, #E0C48F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-h1{
-  font-size:38px;
-  margin:0;
-}
-
 /* CONTENT */
-main{
-  background:white;
-  color:var(--navy);
-  padding:80px 20px 100px;
+.content{
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-size: 18px;
 }
 
-.container{
-  max-width:900px;
-  margin:0 auto;
+.content h3{
+  margin-top: 60px;
+  font-size: 26px;
 }
 
-.kicker{
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.85;
-  margin: 0 0 12px 0;
+.content ul{
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
-h2{
-  margin: 38px 0 12px 0;
-  font-size:24px;
-  letter-spacing:0.02em;
+.content li{
+  margin-bottom: 12px;
 }
 
-p{
-  line-height:2;
-  font-size:15px;
-  margin:0 0 18px 0;
-  letter-spacing:0.01em;
-}
-
-.list{
-  margin: 10px 0 26px 0;
-  padding: 0;
-  list-style: none;
-}
-
-.list li{
-  margin: 10px 0;
-  padding-left: 18px;
-  position: relative;
-  line-height: 1.9;
-  font-size: 14px;
-}
-
-.list li::before{
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* PHOTO */
-.photo-section{
-  margin:50px 0;
+/* IMAGE */
+.story-image{
   text-align:center;
+  margin: 60px 0;
 }
 
-.photo-section img{
-  width:100%;
-  max-width:750px;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.story-image img{
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .caption{
-  margin-top:14px;
-  font-size:13px;
-  letter-spacing:0.04em;
-  opacity:.78;
-}
-
-/* CALLOUT */
-.callout{
-  border: 1px solid rgba(31,47,74,0.12);
-  border-radius: 18px;
-  padding: 22px;
-  background: #fff;
-  box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-  margin: 28px 0 10px 0;
+  font-size: 14px;
+  margin-top: 12px;
+  opacity: 0.7;
 }
 
 /* SIGNATURE */
 .signature{
-  margin-top:60px;
-  text-align:right;
-}
-
-.signature-close{
-  font-size: 14px;
-  opacity: 0.85;
-  margin-bottom: 8px;
-}
-
-.signature-name{
-  font-family:'Parisienne', cursive;
-  font-size:52px;
-  color:var(--navy);
+  margin-top: 80px;
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
 }
 
 /* FOOTER */
 footer{
   text-align:center;
-  padding:40px 20px;
-  background:var(--black);
-  color:rgba(255,255,255,0.7);
-  font-size:12px;
-  letter-spacing:0.06em;
-}
-
-@media (max-width: 768px){
-  header{ padding-top: 200px; }
-  .top-lion{ width: 280px; }
-  h1{ font-size: 30px; }
+  padding: 40px;
+  background: var(--black);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
 }
 </style>
 </head>
@@ -228,19 +156,82 @@ footer{
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div></div>
   </div>
 </nav>
 
-<header>
-  <img src="lion.png" class="top-lion" alt="CubLion Insignia">
-  <h1 class="gold">Our Story</h1>
-</header>
+<div class="page-header">
+  <img src="lion.png" class="large-insignia" alt="CubLion">
+  <h1 class="page-title">Our Story</h1>
+</div>
 
-<!-- Rest of your content remains unchanged -->
+<div class="content">
+
+<h3>Where It Started</h3>
+
+<p>
+Growing up, access to professional sports games wasn’t always easy. My father, an immigrant physician, and my mother worked tirelessly to build a life for our family. Time and resources were limited. Yet sports — the camaraderie, the competition, the shared emotional highs and lows — were always central to who I was.
+</p>
+
+<p>
+Years later, during my medical training, time again became scarce. But the desire to stay connected to the sports world never left. What started as borrowing tickets from a friend turned into pooling resources with others in order to secure season tickets as a group.
+</p>
+
+<p>
+What I didn’t expect was what happened next. Tickets became more than just seats. They became a social hub. A networking opportunity. A place where meaningful relationships formed. And a chance to rethink the entire sports experience.
+</p>
+
+<h3></h3>
+
+<p>
+What began as a practical solution to attend games became a platform for connection — strengthening friendships, building professional relationships, and supporting client experiences.
+</p>
+
+<p>
+Figuring out how to make it work financially came later. The true value wasn’t arbitrage — it was accessibility. Over time, we built systems to manage allocation, coordinate resale, address exchanges, and simplify logistics.
+</p>
+
+<p>
+Today, CubLion operates as a marketplace and execution layer, helping hundreds of clients acquire premium access to sporting events, while also utilizing their tickets when plans change.
+</p>
+
+<ul>
+<li>Access premium seats without long-term commitments</li>
+<li>Secure favorable pricing wherever possible</li>
+<li>Exit positions cleanly without wasting valuable time</li>
+<li>Avoid the chaos of timing and pricing the resale market</li>
+<li>Form meaningful friendships and business connections</li>
+</ul>
+
+<h3>A Social Network for Professional Sports Enthusiasts</h3>
+
+<p>
+The goal is simple: spend more time in better seats. Celebrate the athletes you love. Build connections with like-minded professionals who value access, experience, and excellence.
+</p>
+
+<p>
+Life is about connection. Passion. Winning. We make it easy.
+</p>
+
+<div class="story-image">
+  <img src="nba-finals-2023.jpg" alt="2023 NBA Finals">
+  <div class="caption">
+    Attending Game 4 of the 2023 NBA Finals in Miami, FL with my dad.
+  </div>
+</div>
+
+<div class="signature">
+Anmol Gupta
+</div>
+
+</div>
+
+<footer>
+© 2026 CubLion Entertainment. All Rights Reserved.
+</footer>
 
 </body>
 </html>
