@@ -39,10 +39,6 @@ nav{
   transition: all .2s ease;
 }
 
-nav.shrink{
-  padding: 12px 22px;
-}
-
 .nav-inner{
   max-width: 1200px;
   margin: 0 auto;
@@ -172,7 +168,6 @@ section p{
 
 @media (min-width: 900px){
   .grid-3{ grid-template-columns: repeat(3, 1fr); }
-  .grid-2{ grid-template-columns: repeat(2, 1fr); }
 }
 
 .card{
@@ -195,7 +190,7 @@ section p{
   line-height: 1.65;
 }
 
-/* ---------- FLOW DIAGRAM ---------- */
+/* ---------- FLOW ---------- */
 
 .flow{
   margin-top: 34px;
@@ -297,7 +292,7 @@ footer{
 
 <body>
 
-<nav id="topNav">
+<nav>
   <div class="nav-inner">
     <a href="#top">
       <img src="lion.png" class="nav-insignia" alt="CubLion Home">
@@ -326,8 +321,6 @@ footer{
   </div>
 </header>
 
-<!-- OUR STORY FIRST -->
-
 <section id="story" class="dark">
   <div class="container">
     <h2 class="gold">Built to Replace Chaos With a System.</h2>
@@ -344,8 +337,6 @@ footer{
   </div>
 </section>
 
-<!-- WHAT WE DO + CREDIBILITY -->
-
 <section id="about">
   <div class="container">
     <h2 class="gold">A Smarter Infrastructure for Premium Access.</h2>
@@ -353,81 +344,18 @@ footer{
       The ticket market is fragmented and volatile. CubLion introduces structure —
       disciplined sourcing, allocation management, and seamless execution.
     </p>
-
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>Strategic Sourcing</h3>
-        <p>Access through verified channels and long-standing relationships.</p>
-      </div>
-      <div class="card">
-        <h3>Execution Discipline</h3>
-        <p>Request intake, confirmation, delivery coordination — handled end-to-end.</p>
-      </div>
-      <div class="card">
-        <h3>Discretion & Reliability</h3>
-        <p>Structured workflows built for privacy, consistency, and trust.</p>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
 
 <section id="model">
   <div class="container">
     <h2 class="gold">Access. Re-Engineered.</h2>
-
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-num">1</div>
-        <h3>Request</h3>
-        <p>Share event, city, seating preference, and budget.</p>
-      </div>
-      <div class="arrow">→</div>
-      <div class="flow-step">
-        <div class="step-num">2</div>
-        <h3>Curate</h3>
-        <p>We source and present clean options with transparent tradeoffs.</p>
-      </div>
-      <div class="arrow">→</div>
-      <div class="flow-step">
-        <div class="step-num">3</div>
-        <h3>Execute</h3>
-        <p>Confirmation, transfer, and support handled seamlessly.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:60px;">
-      <h2 class="gold">Common Questions.</h2>
-      <div class="faq">
-        <details>
-          <summary>Do I need season tickets?</summary>
-          <p>No. CubLion provides access without requiring full-season ownership.</p>
-        </details>
-        <details>
-          <summary>What events do you cover?</summary>
-          <p>Sports, concerts, and major live events nationwide.</p>
-        </details>
-        <details>
-          <summary>How fast do you respond?</summary>
-          <p>Most requests receive a response within 24 hours.</p>
-        </details>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact" class="dark">
   <div class="container">
     <h2 class="gold">Connect With Us</h2>
-    <form class="form-wrap" action="https://formspree.io/f/mreadqad" method="POST">
-      <input class="field" name="name" type="text" placeholder="Full Name" required>
-      <input class="field" name="email" type="email" placeholder="Email" required>
-      <textarea class="field" name="message" rows="5" placeholder="What access are you looking for?" required></textarea>
-      <button class="cta" type="submit" style="width:100%;">Submit Inquiry</button>
-    </form>
   </div>
 </section>
 
