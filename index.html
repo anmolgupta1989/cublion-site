@@ -8,697 +8,425 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  :root{
-    --navy:#1F2F4A;
-    --gold:#C6A56A;
-    --black:#0B0F16;
-    --white:#FFFFFF;
-  }
+:root{
+  --navy:#1F2F4A;
+  --gold:#C6A56A;
+  --black:#0B0F16;
+  --white:#FFFFFF;
+}
 
-  body{
-    margin:0;
-    font-family:'Inter', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-  }
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+}
 
-  /* ---------- NAV (logo left + centered links) ---------- */
+/* ---------- NAV ---------- */
 
-  nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(31,47,74,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    z-index: 1000;
-    transition: padding .18s ease, box-shadow .18s ease, background .18s ease;
-    padding: 20px 28px;
-  }
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(31,47,74,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  padding: 20px 28px;
+  transition: all .2s ease;
+}
 
-  nav.shrink{
-    padding: 12px 22px;
-    background: rgba(31,47,74,0.97);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-  }
+nav.shrink{
+  padding: 12px 22px;
+}
 
-  .nav-inner{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 72px 1fr 72px; /* left logo / centered links / right spacer */
-    align-items: center;
-  }
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+}
 
-  /* Lion insignia (top-left) */
-  .nav-insignia{
-    height: 54px;
-    width: auto;
-    display:block;
-    transition: height .18s ease, transform .18s ease, filter .18s ease;
-  }
+.nav-insignia{
+  height: 54px;
+  width: auto;
+  transition: transform .2s ease;
+}
 
-  nav.shrink .nav-insignia{ height: 42px; }
+.nav-insignia:hover{
+  transform: scale(1.05);
+}
 
-  .nav-insignia:hover{
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 8px rgba(198,165,106,.35));
-  }
+.nav-links{
+  justify-self: center;
+  display: flex;
+  gap: 36px;
+}
 
-  .nav-links{
-    justify-self: center;
-    display: flex;
-    gap: 36px;
-    align-items: center;
-  }
+.nav-links a{
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 27px;
+  transition: opacity .15s ease;
+}
 
-  /* 50% bigger than the original 18px */
-  .nav-links a{
-    position: relative;
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 27px;   /* ~50% bigger than 18px */
-    letter-spacing: 0.35px;
-    padding: 8px 2px;
-    transition: opacity .15s ease;
-  }
-  .nav-links a:hover{ opacity:.82; }
+.nav-links a:hover{
+  opacity:.8;
+}
 
-  /* underline animation */
-  .nav-links a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:2px;
-    height:2px;
-    width:100%;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .18s ease;
-    opacity: .9;
-  }
-  .nav-links a:hover::after{ transform: scaleX(1); }
+/* ---------- HERO ---------- */
 
-  /* Hamburger (mobile) */
-  .hamburger{
-    justify-self: end;
-    display:none;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 12px;
-  }
-  .hamburger:focus{
-    outline: 2px solid rgba(198,165,106,0.65);
-    outline-offset: 2px;
-  }
-  .hamburger .bar{
-    display:block;
-    width: 28px;
-    height: 2px;
-    background: var(--gold);
-    margin: 6px 0;
-  }
+header{
+  text-align:center;
+  padding: 220px 20px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  /* Mobile menu panel */
-  .overlay{
-    display:none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 1100;
-  }
-  .overlay.show{ display:block; }
+header img.hero-logo{
+  width: 900px;
+  max-width: 95vw;
+  height: auto;
+  margin-bottom: 60px;
+}
 
-  .mobile-panel{
-    display:none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: min(86vw, 420px);
-    background: rgba(11,15,22,0.98);
-    backdrop-filter: blur(10px);
-    border-left: 1px solid rgba(255,255,255,0.10);
-    z-index: 1200;
-    transform: translateX(100%);
-    transition: transform .22s ease;
-    padding: 22px;
-  }
-  .mobile-panel.show{ display:block; }
-  .mobile-panel.open{ transform: translateX(0); }
+.gold{
+  background: linear-gradient(90deg, #C6A56A, #E0C48F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .mobile-top{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .mobile-close{
-    background: transparent;
-    border: 0;
-    color: var(--gold);
-    font-size: 28px;
-    cursor: pointer;
-    padding: 8px 10px;
-    border-radius: 12px;
-  }
-  .mobile-close:focus{
-    outline: 2px solid rgba(198,165,106,0.65);
-    outline-offset: 2px;
-  }
-  .mobile-links{
-    margin-top: 26px;
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .mobile-links a{
-    color: var(--gold);
-    text-decoration:none;
-    font-weight: 650;
-    font-size: 22px;
-    padding: 14px 12px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.10);
-  }
-  .mobile-links a:hover{
-    background: rgba(255,255,255,0.10);
-  }
+h1{
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 0 0 22px 0;
+}
 
-  /* ---------- HERO ---------- */
+.subhead{
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.75;
+  opacity: 0.92;
+}
 
-  header{
-    text-align:center;
-    padding: 220px 20px 120px; /* room for fixed nav */
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.cta-row{ margin-top: 36px; }
 
-  header img.hero-logo{
-    width: 900px;          /* brand dominant */
-    max-width: 95vw;
-    height: auto;
-    margin-bottom: 60px;
-  }
+button.cta{
+  padding: 16px 34px;
+  background: var(--gold);
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #111;
+  font-size: 16px;
+}
 
-  /* Premium gold gradient for headings */
-  .gold{
-    background: linear-gradient(90deg, #C6A56A, #E0C48F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+/* ---------- SECTIONS ---------- */
 
-  h1{
-    font-family: 'Playfair Display', serif;
-    font-size: 30px; /* logo-dominant */
-    line-height: 1.3;
-    margin: 0 0 22px 0;
-  }
+section{
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--white);
+  color: var(--navy);
+  scroll-margin-top: 120px;
+}
 
-  .subhead{
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.75;
-    opacity: 0.92;
-  }
+section.dark{
+  background: var(--navy);
+  color: var(--white);
+}
 
-  .cta-row{ margin-top: 36px; }
+section h2{
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin: 0;
+}
 
-  button.cta{
-    padding: 16px 34px;
-    background: var(--gold);
-    border: none;
-    border-radius: 999px;
-    font-weight: 700;
-    cursor: pointer;
-    color: #111;
-    font-size: 16px;
-  }
-  button.cta:hover{ opacity: .9; }
+section p{
+  max-width: 900px;
+  margin: 16px auto 0;
+  font-size: 18px;
+  line-height: 1.75;
+  opacity: 0.92;
+}
 
-  /* ---------- SECTIONS ---------- */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-  section{
-    padding: 100px 20px;
-    text-align: center;
-    background: var(--white);
-    color: var(--navy);
-    scroll-margin-top: 120px;
-  }
+/* ---------- CARDS ---------- */
 
-  section.dark{
-    background: var(--navy);
-    color: var(--white);
-  }
+.grid{
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
 
-  section h2{
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    margin: 0;
-  }
+@media (min-width: 900px){
+  .grid-3{ grid-template-columns: repeat(3, 1fr); }
+  .grid-2{ grid-template-columns: repeat(2, 1fr); }
+}
 
-  section p{
-    max-width: 900px;
-    margin: 16px auto 0;
-    font-size: 18px;
-    line-height: 1.75;
-    opacity: 0.92;
-  }
+.card{
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(31,47,74,0.12);
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+}
 
-  footer{
-    text-align:center;
-    padding: 44px 18px;
-    background: var(--black);
-    color: rgba(255,255,255,0.75);
-    font-size: 13px;
-  }
+.card h3{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
 
-  /* ---------- LAYOUT + CARDS ---------- */
+.card p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+}
 
-  .container{
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+/* ---------- FLOW DIAGRAM ---------- */
 
-  .grid{
-    display: grid;
-    gap: 20px;
-    margin-top: 32px;
-  }
+.flow{
+  margin-top: 34px;
+  display: grid;
+  gap: 18px;
+}
 
-  @media (min-width: 900px){
-    .grid-3{ grid-template-columns: repeat(3, 1fr); }
-    .grid-2{ grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .card{
-    border-radius: 18px;
-    padding: 24px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: rgba(255,255,255,0.06);
-    text-align: left;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.16);
-  }
-
-  section:not(.dark) .card{
-    background: #fff;
-    border: 1px solid rgba(31,47,74,0.12);
-    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-  }
-
-  .kicker{
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 700;
-    opacity: 0.85;
-    margin-bottom: 12px;
-  }
-
-  .card h3{
-    margin: 0 0 8px 0;
-    font-size: 18px;
-  }
-
-  .card p{
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.65;
-    opacity: 0.92;
-  }
-
-  /* ---------- HOW IT WORKS DIAGRAM (Upgraded) ---------- */
-
+@media (min-width: 900px){
   .flow{
-    margin-top: 34px;
-    display: grid;
-    gap: 18px;
+    grid-template-columns: 1fr 64px 1fr 64px 1fr;
+    align-items: center;
   }
+}
 
-  @media (min-width: 900px){
-    .flow{
-      grid-template-columns: 1fr 64px 1fr 64px 1fr;
-      align-items: center;
-    }
-  }
+.flow-step{
+  border-radius: 18px;
+  padding: 26px;
+  text-align: left;
+  border: 1px solid rgba(31,47,74,0.12);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+}
 
-  .flow-step{
-    border-radius: 18px;
-    padding: 26px;
-    text-align: left;
-    border: 1px solid rgba(31,47,74,0.12);
-    background: #fff;
-    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-  }
+.step-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(198,165,106,0.22);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
 
-  .step-num{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    background: rgba(198,165,106,0.22);
-    color: #6b4f23;
-    font-weight: 800;
-    margin-bottom: 12px;
-  }
+.arrow{
+  display:none;
+  justify-content:center;
+  font-size: 28px;
+  opacity:.6;
+}
+@media (min-width:900px){
+  .arrow{ display:flex; }
+}
 
-  .flow-step h3{
-    margin: 0 0 8px 0;
-    font-size: 18px;
-  }
+/* ---------- FAQ ---------- */
 
-  .flow-step p{
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.65;
-    opacity: 0.92;
-  }
+.faq{
+  margin-top: 30px;
+  text-align: left;
+  max-width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-  .arrow{
-    display:none;
-    justify-content:center;
-    opacity: 0.65;
-    font-size: 28px;
-    color: rgba(31,47,74,0.75);
-  }
-  @media (min-width: 900px){
-    .arrow{ display:flex; }
-  }
+details{
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 10px 24px rgba(31,47,74,0.10);
+}
 
-  /* ---------- FAQ ---------- */
+summary{
+  cursor:pointer;
+  font-weight:700;
+}
 
-  .faq{
-    margin-top: 30px;
-    text-align: left;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+details p{
+  margin-top:12px;
+  font-size:16px;
+}
 
-  details{
-    background: #fff;
-    border: 1px solid rgba(31,47,74,0.12);
-    border-radius: 16px;
-    padding: 18px 18px;
-    margin-bottom: 14px;
-    box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-  }
+/* ---------- FORM ---------- */
 
-  summary{
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--navy);
-    list-style: none;
-  }
+.form-wrap{
+  max-width: 640px;
+  margin: 34px auto 0;
+  text-align: left;
+}
 
-  summary::-webkit-details-marker{ display:none; }
+.field{
+  width:100%;
+  padding:12px;
+  margin-bottom:16px;
+  border-radius:10px;
+  border:none;
+}
 
-  details p{
-    margin: 12px 0 0 0;
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgba(31,47,74,0.92);
-  }
-
-  /* ---------- FORM ---------- */
-
-  input, textarea{
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-  }
-
-  .form-wrap{
-    max-width: 640px;
-    margin: 34px auto 0;
-    text-align: left;
-  }
-
-  label{
-    display:block;
-    margin: 0 0 6px 0;
-    font-weight: 600;
-    font-size: 13px;
-    opacity: 0.9;
-  }
-
-  .field{
-    width:100%;
-    padding: 12px;
-    margin-bottom: 16px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-  }
-
-  section.dark .field{
-    background: rgba(255,255,255,0.92);
-    color: #111;
-  }
-
-  .small-note{
-    font-size: 12px;
-    opacity: 0.75;
-    margin-top: 10px;
-    line-height: 1.5;
-  }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 980px){
-    .nav-links{ display:none; }
-    .hamburger{ display:block; }
-    .nav-inner{ grid-template-columns: 72px 1fr 56px; }
-    .nav-insignia{ height: 44px; }
-    nav.shrink .nav-insignia{ height: 38px; }
-  }
-
-  @media (max-width: 520px){
-    header{ padding: 190px 16px 105px; }
-    h1{ font-size: 26px; }
-    header img.hero-logo{ margin-bottom: 42px; }
-  }
+footer{
+  text-align:center;
+  padding:44px 18px;
+  background: var(--black);
+  color: rgba(255,255,255,0.75);
+  font-size:13px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="overlay" id="overlay"></div>
-
-<aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
-  <div class="mobile-top">
-    <a href="#top" aria-label="Home">
-      <img src="lion.png" alt="CubLion Home" style="height:44px;width:auto;display:block;">
-    </a>
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
-  </div>
-
-  <nav class="mobile-links" aria-label="Mobile navigation">
-    <a href="#about" class="mobile-link">What We Do</a>
-    <a href="our-story.html" class="mobile-link">Our Story</a>
-    <a href="#model" class="mobile-link">How it Works</a>
-    <a href="#contact" class="mobile-link">Contact Us</a>
-  </nav>
-</aside>
-
-<nav id="topNav" aria-label="Primary navigation">
+<nav id="topNav">
   <div class="nav-inner">
-    <a href="#top" aria-label="Home">
-      <img src="lion.png" class="nav-insignia" alt="CubLion Home" />
+    <a href="#top">
+      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
     </a>
-
-    <div class="nav-links" aria-label="Desktop navigation">
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
       <a href="#about">What We Do</a>
-      <a href="our-story.html">Our Story</a>
       <a href="#model">How it Works</a>
-      <a href="#contact">Contact Us</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+    <div></div>
   </div>
 </nav>
 
 <div id="top"></div>
 
 <header>
-  <img src="logo.png" class="hero-logo" alt="CubLion Entertainment" />
-
+  <img src="logo.png" class="hero-logo" alt="CubLion Entertainment">
   <h1 class="gold">Reimagining Access to Sports, Concerts, and Live Events</h1>
-
   <p class="subhead">
-    CubLion Entertainment is a modern access platform for small and mid-sized businesses and high-value clients.
-    We help you secure premium seating with speed and clarity—without inflated resale markups,
-    inventory headaches, or manual back-and-forth.
+    CubLion Entertainment is a modern access platform for busy professionals and high-value clients.
+    We help secure premium seating with structure, clarity, and disciplined execution.
   </p>
-
   <div class="cta-row">
     <button class="cta" onclick="location.href='#contact'">Request Access</button>
   </div>
 </header>
 
-<section id="about">
-  <div class="container">
-    <div class="kicker">What we do</div>
-    <h2 class="gold">A Smarter Infrastructure for Premium Access.</h2>
-    <p>
-      The ticket market is fragmented, volatile, and inefficient. CubLion simplifies the process:
-      tell us what you want, and we source and execute with discipline and speed.
-    </p>
-
-    <div class="grid grid-3">
-      <div class="card">
-        <h3>Strategic Sourcing</h3>
-        <p>We pursue the best available options across verified channels and trusted relationships.</p>
-      </div>
-      <div class="card">
-        <h3>Managed Execution</h3>
-        <p>From request intake to delivery logistics, we manage the process end-to-end.</p>
-      </div>
-      <div class="card">
-        <h3>Flexible Structure</h3>
-        <p>Per event or ongoing planning — structured around your needs.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- OUR STORY FIRST -->
 
 <section id="story" class="dark">
   <div class="container">
-    <div class="kicker">Our story</div>
     <h2 class="gold">Built to Replace Chaos With a System.</h2>
     <p>
-      CubLion began as a practical solution: a small group pooling season tickets to create smarter access.
-      Over time, it evolved into a structured platform serving busy professionals who value premium experiences and meaningful connection.
-      What started as shared access became a disciplined system — designed to replace chaos with clarity.
+      CubLion began as a small group pooling season tickets to create smarter access.
+      Over time, it evolved into a structured platform serving professionals who value
+      premium experiences and meaningful connection.
     </p>
     <p style="margin-top:18px;">
       <a href="our-story.html" style="color:var(--gold); font-weight:600; text-decoration:none;">
         Read the full story →
       </a>
     </p>
+  </div>
+</section>
 
-    <div class="grid grid-2">
+<!-- WHAT WE DO + CREDIBILITY -->
+
+<section id="about">
+  <div class="container">
+    <h2 class="gold">A Smarter Infrastructure for Premium Access.</h2>
+    <p>
+      The ticket market is fragmented and volatile. CubLion introduces structure —
+      disciplined sourcing, allocation management, and seamless execution.
+    </p>
+
+    <div class="grid grid-3">
       <div class="card">
-        <h3>Speed + clarity</h3>
-        <p>Clean shortlists. Clear confirmation paths. Fast turnaround when timing matters.</p>
+        <h3>Strategic Sourcing</h3>
+        <p>Access through verified channels and long-standing relationships.</p>
       </div>
       <div class="card">
-        <h3>Control + consistency</h3>
-        <p>Structured workflows that prioritize reliability, seating quality, and responsive support.</p>
+        <h3>Execution Discipline</h3>
+        <p>Request intake, confirmation, delivery coordination — handled end-to-end.</p>
+      </div>
+      <div class="card">
+        <h3>Discretion & Reliability</h3>
+        <p>Structured workflows built for privacy, consistency, and trust.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+
 <section id="model">
   <div class="container">
-    <div class="kicker">How it works</div>
     <h2 class="gold">Access. Re-Engineered.</h2>
-    <p>
-      A clean request-to-delivery workflow built for speed, clarity, and execution.
-    </p>
 
     <div class="flow">
       <div class="flow-step">
         <div class="step-num">1</div>
         <h3>Request</h3>
-        <p>Share event, city, date range, seating preferences, and target budget.</p>
+        <p>Share event, city, seating preference, and budget.</p>
       </div>
-
       <div class="arrow">→</div>
-
       <div class="flow-step">
         <div class="step-num">2</div>
         <h3>Curate</h3>
-        <p>We source options and return a shortlist designed to be decided quickly, with clear tradeoffs.</p>
+        <p>We source and present clean options with transparent tradeoffs.</p>
       </div>
-
       <div class="arrow">→</div>
-
       <div class="flow-step">
         <div class="step-num">3</div>
         <h3>Execute</h3>
-        <p>We confirm, manage delivery logistics, and support changes when possible—so the experience stays seamless.</p>
+        <p>Confirmation, transfer, and support handled seamlessly.</p>
       </div>
     </div>
 
-    <div style="margin-top:56px;">
-      <div class="kicker">FAQ</div>
+    <div style="margin-top:60px;">
       <h2 class="gold">Common Questions.</h2>
-
       <div class="faq">
         <details>
-          <summary>What types of events can you help with?</summary>
-          <p>We support premium access for sports, concerts, and major live events. Submit what you’re looking for and we’ll respond with options and next steps.</p>
+          <summary>Do I need season tickets?</summary>
+          <p>No. CubLion provides access without requiring full-season ownership.</p>
         </details>
-
         <details>
-          <summary>Do I need to buy season tickets?</summary>
-          <p>No. CubLion is designed to provide premium access without requiring full-season ownership. You can request access event-by-event or set up ongoing planning.</p>
+          <summary>What events do you cover?</summary>
+          <p>Sports, concerts, and major live events nationwide.</p>
         </details>
-
-        <details>
-          <summary>How does pricing work?</summary>
-          <p>Pricing depends on the event, seating tier, availability, and timing. We focus on delivering clean options with transparent tradeoffs so you can decide quickly.</p>
-        </details>
-
         <details>
           <summary>How fast do you respond?</summary>
-          <p>Most requests receive an initial response within 24 hours. Time-sensitive requests can often be handled sooner depending on inventory and deadlines.</p>
-        </details>
-
-        <details>
-          <summary>Can you help with corporate needs (client entertainment, employee rewards)?</summary>
-          <p>Yes. We regularly support corporate use cases such as client hosting, recruiting, executive travel, and recognition programs.</p>
-        </details>
-
-        <details>
-          <summary>Do you resell tickets?</summary>
-          <p>When needed, we may coordinate resale or exchanges through appropriate channels. Our priority is reliable delivery and minimizing friction for the client experience.</p>
+          <p>Most requests receive a response within 24 hours.</p>
         </details>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="dark">
   <div class="container">
-    <div class="kicker">Contact</div>
     <h2 class="gold">Connect With Us</h2>
-    <p>Tell us what you’re looking for and we’ll respond with next steps.</p>
-
     <form class="form-wrap" action="https://formspree.io/f/mreadqad" method="POST">
-      <label for="name">Full name</label>
-      <input class="field" id="name" name="name" type="text" required />
-
-      <label for="email">Email</label>
-      <input class="field" id="email" name="email" type="email" required />
-
-      <label for="company">Company (optional)</label>
-      <input class="field" id="company" name="company" type="text" />
-
-      <label for="message">What access are you looking for?</label>
-      <textarea class="field" id="message" name="message" rows="5" required></textarea>
-
+      <input class="field" name="name" type="text" placeholder="Full Name" required>
+      <input class="field" name="email" type="email" placeholder="Email" required>
+      <textarea class="field" name="message" rows="5" placeholder="What access are you looking for?" required></textarea>
       <button class="cta" type="submit" style="width:100%;">Submit Inquiry</button>
-
-      <div class="small-note">
-        By submitting, you agree to be contacted regarding your request. We don’t sell your information.
-      </div>
     </form>
   </div>
 </section>
@@ -706,64 +434,6 @@
 <footer>
 © 2026 CubLion Entertainment. All Rights Reserved.
 </footer>
-
-<script>
-  // Nav shrink on scroll
-  const nav = document.getElementById('topNav');
-  const shrinkAt = 18;
-
-  function onScroll(){
-    if (window.scrollY > shrinkAt) nav.classList.add('shrink');
-    else nav.classList.remove('shrink');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Mobile menu
-  const hamburger = document.getElementById('hamburger');
-  const mobilePanel = document.getElementById('mobilePanel');
-  const overlay = document.getElementById('overlay');
-  const mobileClose = document.getElementById('mobileClose');
-
-  function openMenu(){
-    overlay.classList.add('show');
-    mobilePanel.classList.add('show');
-    requestAnimationFrame(() => mobilePanel.classList.add('open'));
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobilePanel.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu(){
-    mobilePanel.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobilePanel.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-
-    setTimeout(() => {
-      mobilePanel.classList.remove('show');
-      overlay.classList.remove('show');
-    }, 220);
-  }
-
-  hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-    isOpen ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener('click', closeMenu);
-  mobileClose.addEventListener('click', closeMenu);
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true'){
-      closeMenu();
-    }
-  });
-</script>
 
 </body>
 </html>
