@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Our Story | CubLion Entertainment</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -45,10 +45,11 @@ nav{
 
 .nav-insignia{
   height: 54px;
-  transition: transform .2s ease;
+  transition: transform .2s ease, filter .2s ease;
 }
 .nav-insignia:hover{
   transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(198,165,106,.30));
 }
 
 .nav-links{
@@ -77,6 +78,7 @@ header{
 .top-lion{
   width:110px;
   margin-bottom:20px;
+  filter: drop-shadow(0 0 10px rgba(198,165,106,.18));
 }
 
 .gold{
@@ -91,10 +93,11 @@ h1{
 }
 
 .subhead{
-  max-width:800px;
+  max-width:860px;
   margin:0 auto;
   line-height:1.9;
   font-size:15px;
+  opacity:0.92;
 }
 
 /* CONTENT */
@@ -109,17 +112,53 @@ main{
   margin:0 auto;
 }
 
+.kicker{
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.85;
+  margin: 0 0 12px 0;
+}
+
 h2{
-  margin-top:40px;
+  margin: 38px 0 12px 0;
   font-size:24px;
+  letter-spacing:0.02em;
 }
 
 p{
   line-height:2;
   font-size:15px;
-  margin-bottom:18px;
+  margin:0 0 18px 0;
+  letter-spacing:0.01em;
 }
 
+.list{
+  margin: 10px 0 26px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li{
+  margin: 10px 0;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.9;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+
+.list li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* PHOTO */
 .photo-section{
   margin:50px 0;
   text-align:center;
@@ -136,27 +175,60 @@ p{
   margin-top:14px;
   font-size:13px;
   letter-spacing:0.04em;
-  opacity:.8;
+  opacity:.78;
 }
 
+/* CALLOUT */
+.callout{
+  border: 1px solid rgba(31,47,74,0.12);
+  border-radius: 18px;
+  padding: 22px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(31,47,74,0.10);
+  margin: 28px 0 10px 0;
+}
+
+.callout strong{
+  display:block;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* SIGNATURE */
 .signature{
   margin-top:60px;
-  text-align:left;
+}
+
+.signature-close{
+  font-size: 14px;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 
 .signature-name{
-  font-family:'Great Vibes', cursive;
-  font-size:42px;
+  font-family:'Parisienne', cursive;
+  font-size:48px;
   color:var(--navy);
-  margin-top:10px;
+  margin-top:0;
+  line-height: 1.0;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px 20px;
   background:var(--black);
   color:rgba(255,255,255,0.7);
   font-size:12px;
+  letter-spacing:0.06em;
+}
+
+@media (max-width: 980px){
+  .nav-links{ gap: 18px; }
+  .nav-links a{ font-size: 18px; }
+  header{ padding: 175px 16px 38px; }
+  h1{ font-size: 32px; }
 }
 </style>
 </head>
@@ -165,11 +237,11 @@ footer{
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html">
+    <a href="index.html" aria-label="Home">
       <img src="lion.png" class="nav-insignia" alt="CubLion Home">
     </a>
 
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Primary navigation">
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
@@ -184,44 +256,32 @@ footer{
   <img src="lion.png" class="top-lion" alt="CubLion Insignia">
   <h1 class="gold">Our Story</h1>
   <p class="subhead">
-    CubLion began as a desire to stay connected to the sports world — and evolved into a network built around access,
-    connection, and the shared experience of being in the front row.
+    CubLion began long before it became a business — and became a network built around access, connection,
+    and the shared experience of being in the front row.
   </p>
 </header>
 
 <main>
   <div class="container">
 
-    <h2>Where It Started</h2>
+    <div class="kicker">Where it started</div>
+    <h2>CubLion began long before it became a business.</h2>
+
     <p>
-      Growing up, access to professional sports wasn’t always easy. My father, an immigrant physician,
-      worked tirelessly to build a life for our family. Time and resources were limited.
-      But sports — the camaraderie, the competition, the shared emotional highs and lows —
-      were always central to who I was.
-    </p>
-    <p>
-      I didn’t just love the game. I loved what it created — connection, energy, belonging.
-      Being present. Being part of something bigger.
+      Growing up, access to professional sports games wasn’t always easy. My father, an immigrant physician,
+      and my mother worked tirelessly to build a life for our family. Time and resources were limited.
+      Yet sports — the camaraderie, the competition, the shared emotional highs and lows — were always central to who I was.
     </p>
 
-    <h2>The Unexpected Opportunity</h2>
     <p>
-      Years later, during medical residency, I found myself busy building a career —
-      but still wanting to stay connected to sports in a meaningful way.
-      What began as borrowing tickets from a friend turned into pooling resources
-      with a few others to secure season tickets.
+      Years later, during my medical training, time again became scarce. But the desire to stay connected to the sports world never left.
+      What started as borrowing tickets from a friend turned into pooling resources with others in order to secure season tickets as a group.
     </p>
+
     <p>
-      What I didn’t expect was what happened next.
-      The front row became more than seats.
-      It became a social hub.
-      A networking opportunity.
-      A place where meaningful relationships formed.
-    </p>
-    <p>
-      Clients became friends. Friends became business partners.
-      Wins felt bigger. Losses felt shared.
-      It wasn’t about status — it was about connection.
+      What I didn’t expect was what happened next. Tickets became more than just seats.
+      They became a social hub. A networking opportunity. A place where meaningful relationships formed.
+      And a chance to rethink the entire sports experience.
     </p>
 
     <div class="photo-section">
@@ -231,33 +291,57 @@ footer{
       </div>
     </div>
 
-    <h2>Communalizing the Front Row</h2>
+    <div class="kicker">From shared access to a marketplace</div>
+    <h2>What began as access became a platform for connection.</h2>
+
     <p>
-      Figuring out how to make it work financially came later.
-      The true value wasn’t arbitrage — it was accessibility.
+      What began as a practical solution to attend games became a platform for connection —
+      strengthening friendships, building professional relationships, and supporting client experiences.
     </p>
+
     <p>
-      We built a system that allows people to:
+      Figuring out how to make it work financially came later. The true value wasn’t arbitrage — it was accessibility.
+      Over time, we built systems to manage allocation, coordinate resale, address exchanges, and simplify logistics.
     </p>
+
     <p>
-      • Access premium seats without long-term commitments  
-      • Enter at favorable pricing when possible  
-      • Exit positions cleanly without wasting valuable time  
-      • Avoid the chaos of timing and pricing the resale market  
+      Today, CubLion operates as a marketplace and execution layer, helping hundreds of clients acquire premium access to sporting events,
+      while also utilizing their tickets when plans change.
     </p>
+
+    <div class="callout">
+      <strong>We built a system that allows people to:</strong>
+      <ul class="list">
+        <li>Access premium seats without long-term commitments</li>
+        <li>Secure favorable pricing wherever possible</li>
+        <li>Exit positions cleanly without wasting valuable time</li>
+        <li>Avoid the chaos of timing and pricing the resale market</li>
+        <li>Form meaningful friendships and business connections</li>
+      </ul>
+    </div>
+
+    <div class="kicker">A social network for professional sports enthusiasts</div>
+    <h2>A better way to belong — and a better way to get in.</h2>
+
     <p>
-      The goal is simple:
-      Spend more time in better seats.
-      Celebrate the athletes you love.
-      Build connections with like-minded people.
+      CubLion is built for busy professionals who love sports — and who value the experience around the game as much as the game itself.
+      In a world where premium access is often fragmented, time-consuming, and unpredictable, we make it structured, responsive, and easier to use.
     </p>
+
     <p>
-      Life is about connection. Passion. Winning.
-      We make it easy.
+      The network matters because the best experiences don’t happen in isolation. They happen when great seats become shared moments —
+      when a game becomes a relationship, a tradition, or a door to new connections. Whether you’re bringing clients, celebrating a win,
+      or just looking for a real night out with people who appreciate the same things you do, CubLion makes premium access feel less transactional
+      and more communal.
+    </p>
+
+    <p>
+      The goal is simple: spend more time in better seats, celebrate the athletes you love, and build connections with like-minded people.
+      Life is about connection. Passion. Winning. We make it easy.
     </p>
 
     <div class="signature">
-      <p>Sincerely,</p>
+      <div class="signature-close">See you in the front row,</div>
       <div class="signature-name">Anmol Gupta</div>
     </div>
 
