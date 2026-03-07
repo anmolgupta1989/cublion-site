@@ -4,219 +4,208 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FAQ | CubLion Entertainment</title>
+<meta name="description" content="Frequently asked questions about CubLion Entertainment — events, pricing, delivery, resale support, and more.">
+<meta property="og:title" content="FAQ — CubLion Entertainment">
+<meta property="og:description" content="Answers on supported leagues, pricing, ticket delivery, response times, and resale support.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cublionlive.com/faq.html">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --navy:#1F2F4A;
-  --gold:#C6A56A;
-  --black:#0B0F16;
-  --white:#FFFFFF;
-}
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background: var(--navy);
-  color: var(--white);
-  line-height: 1.75;
-}
-
-/* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(31,47,74,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  padding: 18px 28px;
-}
-.nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-}
-.nav-insignia{
-  height: 52px;
-  width: auto;
-  display:block;
-  transition: transform .2s ease;
-}
-.nav-insignia:hover{ transform: scale(1.05); }
-
-.nav-links{
-  justify-self: center;
-  display: flex;
-  gap: 36px;
-  align-items: center;
-}
-.nav-links a{
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: opacity .15s ease;
-}
-.nav-links a:hover{ opacity:.85; }
-
-/* PAGE */
-.container{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 160px 20px 100px;
-  text-align: center;
-}
-.center-lion{
-  height: 120px;
-  width: auto;
-  margin: 10px auto 22px;
-  display:block;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
-}
-.gold{
-  background: linear-gradient(90deg,#C6A56A,#E0C48F);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-h1{
-  font-family:'Playfair Display', serif;
-  font-size: 44px;
-  margin: 0 0 14px 0;
-}
-.lede{
-  max-width: 880px;
-  margin: 0 auto 24px;
-  font-size: 18px;
-  opacity: .92;
-}
-
-.faq{
-  text-align: left;
-  margin-top: 30px;
-}
-
-details{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 16px;
-  padding: 16px 16px;
-  margin-top: 12px;
-}
-
-summary{
-  cursor:pointer;
-  font-weight: 900;
-  list-style: none;
-}
-summary::-webkit-details-marker{ display:none; }
-
-details p{
-  margin: 10px 0 0 0;
-  opacity: .92;
-}
-
-@media (max-width: 900px){
-  .nav-links{ display:none; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" aria-label="Home">
-      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
-    </a>
+<a href="#main" class="skip-nav">Skip to content</a>
 
-    <div class="nav-links">
+<nav>
+  <div class="nav-backdrop">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="CubLion Home">
+        <img src="lion.png" class="nav-insignia" alt="CubLion">
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="our-story.html">Our Story</a>
+        <a href="how-it-works.html">How it Works</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" type="button" aria-label="Close menu">&times;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" id="main">
+  <img src="lion.png" class="center-lion" alt="CubLion">
+  <h1 class="gold">FAQ</h1>
+  <p class="lede">
+    Detailed answers on supported leagues, who we serve, ticket delivery, response times, pricing, and resale support.
+  </p>
+</header>
+
+<!-- FAQ SECTION -->
+<section class="section section--dark" style="padding-top: 20px;">
+  <div class="container--narrow">
+    <div class="faq-list">
+
+      <details class="reveal">
+        <summary>What events do you focus on?</summary>
+        <p>
+          We focus primarily on major American sports — NBA, NFL, MLB, and NHL. We are constantly expanding our network into concerts,
+          MLS, and other live events. If you have questions about a specific event, venue, or city, please reach out via the
+          <a href="contact.html" style="color:var(--gold); font-weight:600;">Contact page</a>.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>Who do you work with?</summary>
+        <p>
+          We serve a wide range of clients — from small and mid-sized businesses to high-net-worth individuals, family offices, and private groups.
+          We also work with individuals looking for a single game solution. No customer is "too small" — party size and budgets vary,
+          and we'll work with you regardless of the request when possible.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>How are tickets delivered?</summary>
+        <p>
+          Tickets are typically delivered directly to your email or phone number via secure mobile transfer.
+          Most sporting events are hosted through major ticketing platforms (often Ticketmaster or SeatGeek depending on the venue).
+          Provide your most accurate account/contact information and we'll handle delivery coordination.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>How quickly do you respond?</summary>
+        <p>
+          We prioritize fast response times. We aim to respond within 24 hours, and many requests are handled sooner depending on timing,
+          complexity, and availability.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>How does pricing work?</summary>
+        <p>
+          Pricing is customizable and depends on the event, timing, and seating tier. In many instances, we're able to secure tickets at
+          full-season level prices (i.e., face value) or less. This is driven by our ability to leverage long-standing relationships and
+          network access across major leagues, and by coordinating inventory efficiently. When we present options, we include clear tradeoffs
+          so you can choose quickly with confidence.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>Do you help clients sell tickets too?</summary>
+        <p>
+          Yes. CubLion supports both sides of the marketplace: acquiring tickets and helping clients offload tickets when plans change.
+          Resale support can include coordinating buyer interest within networks and using appropriate external channels when necessary.
+        </p>
+      </details>
+
+      <details class="reveal">
+        <summary>Is CubLion a resale marketplace?</summary>
+        <p>
+          CubLion functions as a marketplace and execution platform — helping clients acquire premium access and coordinate selling when needed.
+          We're not a "browse-and-click" public exchange; we operate through curated sourcing, structured coordination, and verified delivery.
+        </p>
+      </details>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; margin-top: 60px;" class="reveal">
+      <h2 class="gold" style="font-family:'Cinzel',serif; font-size:28px; margin-bottom:12px;">Still have questions?</h2>
+      <p style="opacity:0.85; margin-bottom:24px;">We're happy to help. Reach out and we'll get back to you quickly.</p>
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="lion.png" class="footer-lion" alt="CubLion">
+      <p>Premium access network for sports and live events — built for busy professionals who value connection.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </div>
-
-    <div></div>
+    <div class="footer-col">
+      <h4>Leagues</h4>
+      <a href="contact.html">NBA</a>
+      <a href="contact.html">NFL</a>
+      <a href="contact.html">MLB</a>
+      <a href="contact.html">NHL</a>
+    </div>
   </div>
-</nav>
+  <div class="footer-bottom">&copy; 2026 CubLion Entertainment. All Rights Reserved.</div>
+</footer>
 
-<div class="container">
-  <img src="lion.png" class="center-lion" alt="CubLion">
+<script>
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavClose = document.querySelector('.mobile-nav-close');
+function openMobileNav() {
+  hamburger.classList.add('open');
+  mobileNav.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  if (mobileNav.classList.contains('open')) {
+    closeMobileNav();
+    return;
+  }
+  openMobileNav();
+});
+mobileNavClose.addEventListener('click', closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    closeMobileNav();
+  }
+});
 
-  <h1 class="gold">FAQ</h1>
-  <p class="lede">
-    Detailed answers on supported leagues/events, who we serve, ticket delivery, response times, pricing approach, and resale support.
-  </p>
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-  <div class="faq">
-
-    <details>
-      <summary>What events do you focus on?</summary>
-      <p>
-        We focus primarily on major American sports — NBA, NFL, MLB, and NHL. We are constantly expanding our network into concerts,
-        MLS, and other live events. If you have questions about a specific event, venue, or city, please reach out via the Contact page.
-      </p>
-    </details>
-
-    <details>
-      <summary>Who do you work with?</summary>
-      <p>
-        We serve a wide range of clients — from small and mid-sized businesses to high-net-worth individuals, family offices, and private groups.
-        We also work with individuals looking for a single game solution. No customer is “too small” — party size and budgets vary,
-        and we’ll work with you regardless of the request when possible.
-      </p>
-    </details>
-
-    <details>
-      <summary>How are tickets delivered?</summary>
-      <p>
-        Tickets are typically delivered directly to your email or phone number via secure mobile transfer.
-        Most sporting events are hosted through major ticketing platforms (often Ticketmaster or SeatGeek depending on the venue).
-        Provide your most accurate account/contact information and we’ll handle delivery coordination.
-      </p>
-    </details>
-
-    <details>
-      <summary>How quickly do you respond?</summary>
-      <p>
-        We prioritize fast response times. We aim to respond within 24 hours, and many requests are handled sooner depending on timing,
-        complexity, and availability.
-      </p>
-    </details>
-
-    <details>
-      <summary>How does pricing work?</summary>
-      <p>
-        Pricing is customizable and depends on the event, timing, and seating tier. In many instances, we’re able to secure tickets at
-        full-season level prices (i.e., face value) or less. This is driven by our ability to leverage long-standing relationships and
-        network access across major leagues, and by coordinating inventory efficiently. When we present options, we include clear tradeoffs
-        so you can choose quickly with confidence.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you help clients sell tickets too?</summary>
-      <p>
-        Yes. CubLion supports both sides of the marketplace: acquiring tickets and helping clients offload tickets when plans change.
-        Resale support can include coordinating buyer interest within networks and using appropriate external channels when necessary.
-      </p>
-    </details>
-
-    <details>
-      <summary>Is CubLion a resale marketplace?</summary>
-      <p>
-        CubLion functions as a marketplace and execution platform — helping clients acquire premium access and coordinate selling when needed.
-        We’re not a “browse-and-click” public exchange; we operate through curated sourcing, structured coordination, and verified delivery.
-      </p>
-    </details>
-
-  </div>
-</div>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

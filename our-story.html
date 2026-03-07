@@ -4,339 +4,105 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Our Story | CubLion Entertainment</title>
+<meta name="description" content="How CubLion Entertainment grew from shared season tickets into a premium access network for busy professionals who love sports.">
+<meta property="og:title" content="Our Story — CubLion Entertainment">
+<meta property="og:description" content="From shared season tickets to a premium access network. The CubLion story.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cublionlive.com/our-story.html">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&family=Allura&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --navy:#1F2F4A;
-  --gold:#C6A56A;
-  --black:#0B0F16;
-  --white:#FFFFFF;
-}
-
-body{
-  margin:0;
-  font-family:'Cinzel', serif;
-  background: var(--navy);
-  color: var(--white);
-}
-
-/* IMPORTANT: prevent ellipsis/nowrap truncation */
-p, li, h1, h2, h3, a, span, div{
-  white-space: normal !important;
-  overflow: visible !important;
-  text-overflow: clip !important;
-  overflow-wrap: anywhere;
-  word-break: normal;
-}
-
-/* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(31,47,74,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 18px 28px;
-  z-index: 1000;
-}
-
-.nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-}
-
-.nav-insignia{
-  height: 54px;
-  width:auto;
-  transition: transform .2s ease, filter .2s ease;
-}
-.nav-insignia:hover{
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(198,165,106,.30));
-}
-
-.nav-links{
-  justify-self: center;
-  display: flex;
-  gap: 34px;
-}
-
-.nav-links a{
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 22px;
-  letter-spacing: 0.06em;
-  font-weight: 600;
-  position: relative;
-  padding: 6px 2px;
-  transition: opacity .15s ease;
-}
-.nav-links a:hover{ opacity:.82; }
-
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  height:2px;
-  width:100%;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .18s ease;
-  opacity: .9;
-}
-.nav-links a:hover::after{ transform: scaleX(1); }
-
-/* HERO */
-header{
-  text-align:center;
-  padding: 190px 20px 34px;
-}
-
-.top-lion{
-  width: 420px;         /* ~4x the old 110px */
-  max-width: 78vw;
-  height: auto;
-  margin: 0 auto 22px;
-  display:block;
-  filter: drop-shadow(0 0 14px rgba(198,165,106,.18));
-}
-
-.gold{
-  background: linear-gradient(90deg, #C6A56A, #E0C48F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h1{
-  font-size: 40px;
-  margin: 0;
-}
-
-/* CONTENT */
-main{
-  background: white;
-  color: var(--navy);
-  padding: 84px 20px 110px;
-}
-
-.container{
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.kicker{
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.85;
-  margin: 0 0 12px 0;
-}
-
-h2{
-  margin: 34px 0 12px 0;
-  font-size: 24px;
-  letter-spacing: 0.02em;
-}
-
-p{
-  font-family:'Inter', sans-serif;
-  line-height: 2.0;
-  font-size: 15px;
-  margin: 0 0 18px 0;
-  letter-spacing: 0.01em;
-  color: #1F2F4A;
-}
-
-/* PHOTO */
-.photo-section{
-  margin: 34px 0 50px;   /* placed right after the “sports experience” paragraph */
-  text-align:center;
-}
-
-.photo-section img{
-  width:100%;
-  max-width: 750px;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.caption{
-  margin-top: 14px;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  opacity: .78;
-  font-family:'Inter', sans-serif;
-}
-
-/* CALLOUT */
-.callout{
-  border: 1px solid rgba(31,47,74,0.12);
-  border-radius: 18px;
-  padding: 22px;
-  background: #fff;
-  box-shadow: 0 10px 24px rgba(31,47,74,0.10);
-  margin: 28px 0 10px 0;
-}
-
-.callout strong{
-  display:block;
-  margin-bottom: 10px;
-  letter-spacing: 0.02em;
-}
-
-.list{
-  margin: 10px 0 0 0;
-  padding: 0;
-  list-style: none;
-  font-family:'Inter', sans-serif;
-}
-
-.list li{
-  margin: 10px 0;
-  padding-left: 18px;
-  position: relative;
-  line-height: 1.9;
-  font-size: 14px;
-  letter-spacing: 0.01em;
-}
-
-.list li::before{
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* SIGNATURE */
-.signature{
-  margin-top: 60px;
-  text-align: right; /* flush right */
-}
-
-.signature-close{
-  font-family:'Inter', sans-serif;
-  font-size: 14px;
-  opacity: 0.88;
-  letter-spacing: 0.02em;
-  margin-bottom: 8px;
-  color:#1F2F4A;
-}
-
-.signature-name{
-  font-family:'Allura', cursive; /* cleaner alternative to Parisienne */
-  font-size: 56px;
-  color: var(--navy);
-  margin-top: 0;
-  line-height: 1.0;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding: 40px 20px;
-  background: var(--black);
-  color: rgba(255,255,255,0.7);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-}
-
-@media (max-width: 980px){
-  .nav-links{ gap: 18px; }
-  .nav-links a{ font-size: 18px; }
-  header{ padding: 175px 16px 28px; }
-  h1{ font-size: 34px; }
-  .top-lion{ width: 320px; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600;700&family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<a href="#main" class="skip-nav">Skip to content</a>
+
 <nav>
-  <div class="nav-inner">
-    <a href="index.html" aria-label="Home">
-      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
-    </a>
-
-    <div class="nav-links" aria-label="Primary navigation">
-      <a href="our-story.html">Our Story</a>
-      <a href="how-it-works.html">How it Works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+  <div class="nav-backdrop">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="CubLion Home">
+        <img src="lion.png" class="nav-insignia" alt="CubLion">
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="our-story.html" class="active">Our Story</a>
+        <a href="how-it-works.html">How it Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <div></div>
   </div>
 </nav>
 
-<header>
-  <img src="lion.png" class="top-lion" alt="CubLion Insignia">
+<div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" type="button" aria-label="Close menu">&times;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" id="main">
+  <img src="lion.png" class="center-lion" alt="CubLion">
   <h1 class="gold">Our Story</h1>
 </header>
 
-<main>
-  <div class="container">
+<!-- CONTENT -->
+<main class="content-main">
+  <div class="container--narrow">
 
-    <div class="kicker">  </div>
-    <h2>CubLion Entertainment began long before it became a business.</h2>
+    <h2 class="reveal">CubLion Entertainment began long before it became a business.</h2>
 
-    <p>
-      Growing up, access to professional sports games wasn’t always easy. My father, an immigrant physician,
+    <p class="reveal">
+      Growing up, access to professional sports games wasn't always easy. My father, an immigrant physician,
       and my mother worked tirelessly to build a life for our family. Time and resources were limited.
       Yet sports — the camaraderie, the competition, the shared emotional highs and lows — were always central to who I was.
     </p>
 
-    <p>
+    <p class="reveal">
       Years later, during my medical training, time again became scarce. But the desire to stay connected to the sports world never left.
       What started as borrowing tickets from a friend turned into pooling resources with others in order to secure season tickets as a group.
     </p>
 
-    <p>
-      What I didn’t expect was what happened next. Tickets became more than just seats.
+    <p class="reveal">
+      What I didn't expect was what happened next. Tickets became more than just seats.
       They became a social hub. A networking opportunity. A place where meaningful relationships formed.
       And a chance to rethink the entire sports experience.
     </p>
 
-    <!-- Photo moved to immediately after the paragraph above -->
-    <div class="photo-section">
-      <img src="nba-finals.jpg" alt="2023 NBA Finals Game 4">
-      <div class="caption">
+    <div class="photo-section reveal">
+      <img src="nba-finals.jpg" alt="Attending Game 4 of the 2023 NBA Finals">
+      <div class="photo-caption">
         Attending Game 4 of the 2023 NBA Finals in Miami, FL with my dad.
       </div>
     </div>
 
-    <h2>The start of a new platform.</h2>
+    <h2 class="reveal">The start of a new platform.</h2>
 
-    <p>
+    <p class="reveal">
       What began as a practical solution to attend games became a platform for connection —
       strengthening friendships, building professional relationships, and supporting client experiences.
     </p>
 
-    <p>
-      Figuring out how to make it work financially came later. The true value wasn’t arbitrage — it was accessibility.
+    <p class="reveal">
+      Figuring out how to make it work financially came later. The true value wasn't arbitrage — it was accessibility.
       Over time, we built systems to manage allocation, coordinate resale, address exchanges, and simplify logistics.
     </p>
 
-    <p>
+    <p class="reveal">
       Today, CubLion Entertainment operates as a marketplace and execution layer, helping hundreds of clients acquire premium access to sporting events,
       while also utilizing their tickets when plans change.
     </p>
 
-    <div class="callout">
+    <div class="callout-box reveal">
       <strong>We built a system that allows people to:</strong>
-      <ul class="list">
+      <ul class="callout-list">
         <li>Access premium seats without long-term commitments</li>
         <li>Secure favorable pricing wherever possible</li>
         <li>Exit positions cleanly without wasting valuable time</li>
@@ -345,26 +111,26 @@ footer{
       </ul>
     </div>
 
-    <h2>A social network for professionals</h2>
+    <h2 class="reveal">A social network for professionals.</h2>
 
-    <p>
+    <p class="reveal">
       CubLion Entertainment is built for busy professionals who love sports — and who value the experience around the game as much as the game itself.
       In a world where premium access is often fragmented, time-consuming, and unpredictable, we make it structured, responsive, and easier to use.
     </p>
 
-    <p>
-      The network matters because the best experiences don’t happen in isolation. They happen when great seats become shared moments —
-      when a game becomes a relationship, a tradition, or a door to new connections. Whether you’re treating clients, rewarding an employee of the month,
+    <p class="reveal">
+      The network matters because the best experiences don't happen in isolation. They happen when great seats become shared moments —
+      when a game becomes a relationship, a tradition, or a door to new connections. Whether you're treating clients, rewarding an employee of the month,
       or just looking for a real night out with people who appreciate the same things you do, CubLion Entertainment makes premium access feel less transactional
       and more communal.
     </p>
 
-    <p>
+    <p class="reveal">
       The goal is simple: spend more time in better seats, celebrate the athletes you love, and meet like-minded professionals.
       Life is about Connection. Passion. And Winning. We make it easy.
     </p>
 
-    <div class="signature">
+    <div class="signature reveal">
       <div class="signature-close">See you in the front row,</div>
       <div class="signature-name">Anmol Gupta</div>
     </div>
@@ -373,8 +139,78 @@ footer{
 </main>
 
 <footer>
-© 2026 CubLion Entertainment. All Rights Reserved.
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="lion.png" class="footer-lion" alt="CubLion">
+      <p>Premium access network for sports and live events — built for busy professionals who value connection.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="our-story.html">Our Story</a>
+      <a href="how-it-works.html">How it Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Leagues</h4>
+      <a href="contact.html">NBA</a>
+      <a href="contact.html">NFL</a>
+      <a href="contact.html">MLB</a>
+      <a href="contact.html">NHL</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 CubLion Entertainment. All Rights Reserved.</div>
 </footer>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavClose = document.querySelector('.mobile-nav-close');
+function openMobileNav() {
+  hamburger.classList.add('open');
+  mobileNav.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  if (mobileNav.classList.contains('open')) {
+    closeMobileNav();
+    return;
+  }
+  openMobileNav();
+});
+mobileNavClose.addEventListener('click', closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    closeMobileNav();
+  }
+});
+
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

@@ -4,220 +4,213 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>How it Works | CubLion Entertainment</title>
+<meta name="description" content="A structured request-to-delivery workflow for acquiring and selling premium tickets — designed for speed, clarity, and clean execution.">
+<meta property="og:title" content="How it Works — CubLion Entertainment">
+<meta property="og:description" content="Submit a request, get curated options, confirm. Our network handles sourcing, allocation, and delivery.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cublionlive.com/how-it-works.html">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --navy:#1F2F4A;
-  --gold:#C6A56A;
-  --black:#0B0F16;
-  --white:#FFFFFF;
-}
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background: var(--navy);
-  color: var(--white);
-  line-height: 1.75;
-}
-
-/* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(31,47,74,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  padding: 18px 28px;
-}
-.nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  align-items: center;
-}
-.nav-insignia{
-  height: 52px;
-  width: auto;
-  display:block;
-  transition: transform .2s ease;
-}
-.nav-insignia:hover{ transform: scale(1.05); }
-
-.nav-links{
-  justify-self: center;
-  display: flex;
-  gap: 36px;
-  align-items: center;
-}
-.nav-links a{
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: opacity .15s ease;
-}
-.nav-links a:hover{ opacity:.85; }
-
-/* PAGE */
-.container{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 160px 20px 100px;
-  text-align: center;
-}
-.center-lion{
-  height: 120px;
-  width: auto;
-  margin: 10px auto 22px;
-  display:block;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.20));
-}
-.gold{
-  background: linear-gradient(90deg,#C6A56A,#E0C48F);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-h1{
-  font-family:'Playfair Display', serif;
-  font-size: 44px;
-  margin: 0 0 14px 0;
-}
-.lede{
-  max-width: 860px;
-  margin: 0 auto 26px;
-  font-size: 18px;
-  opacity: .92;
-  text-align: center;
-}
-
-.section{
-  margin-top: 48px;
-  text-align: left;
-}
-h2{
-  font-family:'Playfair Display', serif;
-  font-size: 28px;
-  margin: 0 0 14px 0;
-}
-
-.flow{
-  display:grid;
-  gap: 14px;
-  margin-top: 18px;
-}
-@media (min-width: 900px){
-  .flow{ grid-template-columns: repeat(3, 1fr); }
-}
-.card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  padding: 18px;
-}
-.step-num{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: rgba(198,165,106,0.22);
-  color: #f3e6cf;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.note{
-  margin-top: 18px;
-  opacity: .92;
-}
-
-.link{
-  color: var(--gold);
-  font-weight: 800;
-  text-decoration: none;
-}
-.link:hover{ opacity:.85; }
-
-@media (max-width: 900px){
-  .nav-links{ display:none; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" aria-label="Home">
-      <img src="lion.png" class="nav-insignia" alt="CubLion Home">
-    </a>
+<a href="#main" class="skip-nav">Skip to content</a>
 
-    <div class="nav-links">
+<nav>
+  <div class="nav-backdrop">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="CubLion Home">
+        <img src="lion.png" class="nav-insignia" alt="CubLion">
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="our-story.html">Our Story</a>
+        <a href="how-it-works.html" class="active">How it Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" type="button" aria-label="Close menu">&times;</button>
+  <a href="our-story.html">Our Story</a>
+  <a href="how-it-works.html">How it Works</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" id="main">
+  <img src="lion.png" class="center-lion" alt="CubLion">
+  <h1 class="gold">How it Works</h1>
+  <p class="lede">
+    A structured request-to-delivery workflow for acquiring and selling premium tickets — designed for speed, clarity, and clean execution.
+  </p>
+</header>
+
+<!-- ACQUIRE TICKETS -->
+<section class="section section--white">
+  <div class="container">
+    <div class="kicker reveal">Acquire Tickets</div>
+    <h2 class="gold reveal">Three steps to your seats.</h2>
+    <p class="section-desc reveal">
+      Tell us what you want, and our network does the rest. From sourcing to secure delivery, the process is built for simplicity.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="card reveal reveal-delay-1">
+        <div class="step-num">1</div>
+        <h3>Request</h3>
+        <p>Share the event, city, date, seating preferences, party size, and budget. Be as specific or open as you'd like.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <h3>Curate</h3>
+        <p>We source options through verified channels and relationships, then provide a clean shortlist with clear tradeoffs.</p>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <h3>Execute</h3>
+        <p>You confirm; we coordinate secure mobile transfer (typically via Ticketmaster/SeatGeek depending on the venue).</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 36px;">
+      <p class="section-desc">
+        For detailed questions on pricing, delivery, resale, and scope — visit the <a href="faq.html" style="color:var(--gold); font-weight:700; text-decoration:underline;">FAQ page</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SELL TICKETS -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="kicker reveal">Sell Tickets</div>
+    <h2 class="gold reveal">Plans change. We make it easy.</h2>
+    <p class="section-desc reveal">
+      If you're looking to offload tickets — whether it's a single game or an ongoing inventory — CubLion can help coordinate resale and reallocation
+      through our network and trusted channels.
+    </p>
+
+    <div class="grid grid-3" style="margin-top: 40px;">
+      <div class="card reveal reveal-delay-1">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+        </div>
+        <h3>List With Us</h3>
+        <p>Share your inventory details — event, section, row, number of seats, and your target price.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>We Match Buyers</h3>
+        <p>Our network connects your tickets to verified buyers who are actively looking for premium access.</p>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Clean Exit</h3>
+        <p>We handle transfer logistics and coordination — so you can exit cleanly without wasting valuable time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="section section--white" style="padding: 80px 20px;">
+  <div class="container" style="text-align: center;">
+    <h2 class="gold reveal">Ready to get started?</h2>
+    <p class="section-desc reveal">Tell us what you're looking for and we'll handle the rest.</p>
+    <div class="reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request Access</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="lion.png" class="footer-lion" alt="CubLion">
+      <p>Premium access network for sports and live events — built for busy professionals who value connection.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
       <a href="our-story.html">Our Story</a>
       <a href="how-it-works.html">How it Works</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </div>
-
-    <div></div>
-  </div>
-</nav>
-
-<div class="container">
-  <img src="lion.png" class="center-lion" alt="CubLion">
-
-  <h1 class="gold">How it Works</h1>
-  <p class="lede">
-    A structured request-to-delivery workflow for acquiring and selling premium tickets — designed for speed, clarity, and clean execution.
-  </p>
-
-  <div class="section">
-    <h2 class="gold">Acquire Tickets</h2>
-    <div class="flow">
-      <div class="card">
-        <div class="step-num">1</div>
-        <strong>Request</strong>
-        <p style="margin:8px 0 0 0; opacity:.92;">
-          Share the event, city, date, seating preferences, party size, and budget.
-        </p>
-      </div>
-      <div class="card">
-        <div class="step-num">2</div>
-        <strong>Curate</strong>
-        <p style="margin:8px 0 0 0; opacity:.92;">
-          We source options through verified channels and relationships, then provide a clean shortlist.
-        </p>
-      </div>
-      <div class="card">
-        <div class="step-num">3</div>
-        <strong>Execute</strong>
-        <p style="margin:8px 0 0 0; opacity:.92;">
-          You confirm; we coordinate secure mobile transfer (typically via Ticketmaster/SeatGeek depending on the venue).
-        </p>
-      </div>
+    <div class="footer-col">
+      <h4>Leagues</h4>
+      <a href="contact.html">NBA</a>
+      <a href="contact.html">NFL</a>
+      <a href="contact.html">MLB</a>
+      <a href="contact.html">NHL</a>
     </div>
-
-    <p class="note">
-      We’re adding a visual diagram here next. For detailed questions (pricing, delivery, resale, and scope), see the
-      <a class="link" href="faq.html">FAQ page →</a>
-    </p>
   </div>
+  <div class="footer-bottom">&copy; 2026 CubLion Entertainment. All Rights Reserved.</div>
+</footer>
 
-  <div class="section">
-    <h2 class="gold">Sell Tickets</h2>
-    <p style="opacity:.92;">
-      If you’re looking to offload tickets — whether it’s a single game or an ongoing inventory — CubLion can help coordinate resale and reallocation.
-      We’ll incorporate your resale workflow into the FAQ next as we ask the next question set.
-    </p>
-  </div>
-</div>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavClose = document.querySelector('.mobile-nav-close');
+function openMobileNav() {
+  hamburger.classList.add('open');
+  mobileNav.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  if (mobileNav.classList.contains('open')) {
+    closeMobileNav();
+    return;
+  }
+  openMobileNav();
+});
+mobileNavClose.addEventListener('click', closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    closeMobileNav();
+  }
+});
+
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
